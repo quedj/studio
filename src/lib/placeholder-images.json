@@ -25,28 +25,22 @@
       "imageHint": "concert crowd"
     },
     {
-      "id": "design-l6-poster",
-      "description": "GRAPHIC DESIGN POSTER",
-      "imageUrl": "https://picsum.photos/seed/l6poster/1200/1600",
-      "imageHint": "avant-garde portrait"
+      "id": "ami-consulting",
+      "description": "AMI CONSULTING FIRM BRANDING",
+      "imageUrl": "https://picsum.photos/seed/amiconsult/1200/1600",
+      "imageHint": "minimalist logo branding"
     },
     {
-      "id": "portrait-design",
-      "description": "DETAILED PORTRAIT IMAGE",
-      "imageUrl": "https://picsum.photos/seed/tiger99/1200/1600",
-      "imageHint": "tiger face"
+      "id": "experimental-poster",
+      "description": "EXPERIMENTAL TYPOGRAPHY POSTER",
+      "imageUrl": "https://picsum.photos/seed/expposter/1200/1600",
+      "imageHint": "modern abstract typography"
     },
     {
-      "id": "design-abstract-1",
-      "description": "ABSTRACT GEOMETRIC GRAPHIC",
-      "imageUrl": "https://picsum.photos/seed/architect/1200/1600",
-      "imageHint": "architectural tools"
-    },
-    {
-      "id": "design-minimal-brand",
-      "description": "MINIMAL BRAND IDENTITY",
-      "imageUrl": "https://picsum.photos/seed/minimal/1200/1600",
-      "imageHint": "minimalist design"
+      "id": "visual-architecture",
+      "description": "VISUAL ARCHITECTURE STUDY",
+      "imageUrl": "https://picsum.photos/seed/visarch/1200/1600",
+      "imageHint": "architectural abstract design"
     }
   ]
 }

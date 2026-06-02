@@ -15,9 +15,9 @@ import {
 } from "@/components/ui/carousel";
 
 const DESIGN_PROJECTS = [
-  PlaceHolderImages.find(img => img.id === 'design-l6-poster'),
-  PlaceHolderImages.find(img => img.id === 'portrait-design'),
-  PlaceHolderImages.find(img => img.id === 'design-abstract-1'),
+  PlaceHolderImages.find(img => img.id === 'ami-consulting'),
+  PlaceHolderImages.find(img => img.id === 'experimental-poster'),
+  PlaceHolderImages.find(img => img.id === 'visual-architecture'),
 ].filter(Boolean);
 
 const SlicedProject = ({ image }: { image: any }) => {
@@ -102,9 +102,9 @@ export const GraphicDesign = () => {
             </h2>
           </div>
           <div className="max-w-xl text-right ml-auto">
-             <p className="text-white/40 font-black tracking-widest text-[10px] mb-4 uppercase">PORTFOLIO • ADOBE PHOTOSHOP • CREATIVE DIRECTION</p>
+             <p className="text-white/40 font-black tracking-widest text-[10px] mb-4 uppercase">PORTFOLIO • ADOBE PHOTOSHOP • BRANDING</p>
              <p className="text-white/60 text-lg md:text-xl leading-tight font-medium">
-               Transforming raw concepts into digital masterpieces through masterful image manipulation and artistic architecture. Every project is a journey in visual storytelling.
+               A curated selection of identity design and visual architecture. Every project explores the intersection of minimalist aesthetics and bold communication.
              </p>
           </div>
         </div>
