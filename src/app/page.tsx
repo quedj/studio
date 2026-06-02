@@ -1,4 +1,3 @@
-
 "use client";
 
 import React, { useEffect, useState } from 'react';
@@ -13,10 +12,10 @@ import { StaticFooter } from '@/components/StaticFooter';
 import { Toaster } from '@/components/ui/toaster';
 import { cn } from '@/lib/utils';
 
-// Dynamically import heavy interactive components with SSR disabled to prevent module resolution errors
 const ThreeCanvas = dynamic(() => import('@/components/ThreeCanvas').then(mod => mod.ThreeCanvas), { ssr: false });
 const ScrollExperience = dynamic(() => import('@/components/ScrollExperience').then(mod => mod.ScrollExperience), { ssr: false });
 const TorchReveal = dynamic(() => import('@/components/TorchReveal').then(mod => mod.TorchReveal), { ssr: false });
+const CursorGlow = dynamic(() => import('@/components/CursorGlow').then(mod => mod.CursorGlow), { ssr: false });
 
 export default function Home() {
   const [isDisco, setIsDisco] = useState(false);
@@ -39,42 +38,59 @@ export default function Home() {
 
   return (
     <main className={cn(
-      "min-h-screen bg-black text-white scroll-smooth relative selection:bg-primary selection:text-white overflow-hidden",
+      "min-h-screen bg-black text-white selection:bg-primary selection:text-white relative",
       isDisco && "disco-mode"
     )}>
-      {/* Background Layer */}
       <ThreeCanvas />
       <ScrollExperience />
-
-      {/* Foreground Layer */}
+      <CursorGlow />
+      
       <div className="relative z-10">
         <Navbar />
         
-        {/* Immersive Hero */}
-        <section id="home" className="relative h-screen flex items-center justify-center overflow-hidden">
-          <TorchReveal text="QUE DJ EXPERIENCE" />
-          <div className="relative z-30 text-center pointer-events-none">
-            <p className="text-white/40 font-headline font-bold uppercase tracking-[0.5em] mb-4 animate-in fade-in slide-in-from-bottom-4 duration-1000">
-              Apps & Beats — Build. Rent. DJ.
-            </p>
-            <h2 className="text-2xl font-bold text-white/60 uppercase tracking-widest mt-[20vh]">
-              AI ENGINEER • GRAPHIC DESIGNER • ARCHITECT
-            </h2>
+        {/* Lando-Inspired Hero */}
+        <section id="home" className="h-screen flex items-center justify-center">
+          <div className="hero-gradient absolute inset-0 pointer-events-none" />
+          <TorchReveal text="QUE EXPERIENCE" />
+          
+          <div className="relative z-30 text-center pointer-events-none px-10">
+             <div className="overflow-hidden mb-4">
+               <p className="text-white/40 font-black uppercase tracking-[0.8em] text-[10px] animate-in slide-in-from-bottom-full duration-1000">
+                 ENGINEERING THE EXTRAORDINARY
+               </p>
+             </div>
+             <div className="mt-[25vh] space-y-2">
+               <h2 className="text-[2vw] font-black italic tracking-widest text-white/20">AI ENGINEER</h2>
+               <h2 className="text-[2vw] font-black italic tracking-widest text-primary">GRAPHIC DESIGNER</h2>
+               <h2 className="text-[2vw] font-black italic tracking-widest text-white/20">ARCHITECT</h2>
+             </div>
           </div>
         </section>
 
         <AIShowcase />
         <GraphicDesign />
         <StaticServices />
+        
+        {/* Transition Segment */}
+        <div className="py-40 bg-white text-black text-center overflow-hidden">
+           <h2 className="text-[15vw] font-black leading-none tracking-tighter italic whitespace-nowrap opacity-10 translate-x-1/2">
+             BUILD • DESIGN • SCALE • BUILD • DESIGN • SCALE
+           </h2>
+        </div>
+
         <StaticProjects />
         <StaticContact />
         <StaticFooter />
       </div>
+      
       <Toaster />
       
-      {/* Scroll Hint */}
-      <div className="fixed bottom-10 left-1/2 -translate-x-1/2 z-40 opacity-50 animate-bounce pointer-events-none">
-        <div className="w-px h-12 bg-gradient-to-b from-primary to-transparent" />
+      {/* Scroll Down Indicator */}
+      <div className="fixed bottom-10 right-10 z-40 flex flex-col items-center gap-4 group">
+        <span className="text-[8px] font-black vertical-text uppercase tracking-widest text-white/20 group-hover:text-primary transition-colors">Scroll</span>
+        <div className="w-px h-20 bg-white/10 relative overflow-hidden">
+          <div className="absolute top-0 left-0 w-full h-1/2 bg-primary animate-scroll-indicator" />
+        </div>
       </div>
     </main>
   );

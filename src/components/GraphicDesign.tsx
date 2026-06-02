@@ -1,69 +1,71 @@
-
 "use client";
 
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import Image from 'next/image';
-import { Badge } from '@/components/ui/badge';
-import { PenTool, Layers, Layout } from 'lucide-react';
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 export const GraphicDesign = () => {
+  const containerRef = useRef(null);
+  const slicesRef = useRef<HTMLDivElement[]>([]);
+
+  useEffect(() => {
+    gsap.registerPlugin(ScrollTrigger);
+
+    slicesRef.current.forEach((slice, i) => {
+      gsap.fromTo(slice, 
+        { y: 100 * (i + 1), opacity: 0 },
+        { 
+          y: 0, 
+          opacity: 1, 
+          scrollTrigger: {
+            trigger: containerRef.current,
+            start: "top 70%",
+            end: "bottom 20%",
+            scrub: 1
+          }
+        }
+      );
+    });
+  }, []);
+
   return (
-    <section id="design" className="py-32 px-6 bg-black relative">
-      <div className="max-w-6xl mx-auto">
-        <div className="text-center mb-16">
-          <h2 className="font-headline text-4xl md:text-6xl font-black tracking-tighter uppercase mb-6">
-            VISUAL <span className="text-primary">ARCHITECTURE</span>
+    <section id="design" ref={containerRef} className="py-40 bg-black">
+      <div className="max-w-[1800px] mx-auto px-10">
+        <div className="mb-20 flex flex-col lg:flex-row lg:items-end justify-between gap-10">
+          <h2 className="text-[10vw] font-black leading-[0.8] tracking-tighter italic">
+            VISUAL <br /><span className="text-primary">CORE</span>
           </h2>
-          <p className="text-white/40 max-w-2xl mx-auto uppercase tracking-widest font-bold">
-            Adobe Photoshop & Creative Direction
-          </p>
+          <div className="max-w-md text-right">
+             <p className="text-white/40 font-black tracking-widest text-[10px] mb-4 uppercase">Adobe Photoshop • Creative Direction</p>
+             <p className="text-white/60 text-lg leading-tight">Masterful image manipulation and artistic architecture crafted through decades of design evolution.</p>
+          </div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-          <div className="relative aspect-square rounded-2xl overflow-hidden group border border-white/10">
-            <Image 
-              src="https://picsum.photos/seed/645/800/800" // Fallback if local not available, but user provided one
-              alt="Graphic Design Portfolio 645"
-              fill
-              className="object-cover group-hover:scale-105 transition-transform duration-700"
-              data-ai-hint="portrait design"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-60" />
-            <div className="absolute bottom-6 left-6">
-              <Badge className="bg-white text-black font-black px-3 py-1">645 PORTRAIT</Badge>
-            </div>
+        <div className="relative w-full aspect-[4/5] lg:aspect-[16/9] bg-zinc-900 overflow-hidden flex items-center justify-center">
+          <div className="absolute inset-0 flex">
+            {[0, 1, 2, 3].map((i) => (
+              <div 
+                key={i} 
+                ref={el => { if (el) slicesRef.current[i] = el; }}
+                className="flex-1 relative h-full overflow-hidden border-r border-white/5"
+              >
+                <div className="absolute top-0 left-[-100%] w-[400%] h-full">
+                  <Image 
+                    src="https://picsum.photos/seed/645/1920/1080"
+                    alt="645 Portrait Sliced"
+                    fill
+                    className="object-cover grayscale hover:grayscale-0 transition-all duration-1000"
+                    style={{ left: `${-i * 25}%` }}
+                    data-ai-hint="portrait design"
+                  />
+                </div>
+              </div>
+            ))}
           </div>
-
-          <div className="space-y-8">
-            <div className="flex gap-4 p-6 glass rounded-xl">
-              <div className="p-3 bg-primary/20 rounded-lg text-primary">
-                <PenTool className="w-6 h-6" />
-              </div>
-              <div>
-                <h4 className="font-bold text-white mb-2">Masterful Manipulation</h4>
-                <p className="text-white/50 text-sm">Advanced Adobe Photoshop techniques for high-impact branding and creative assets.</p>
-              </div>
-            </div>
-
-            <div className="flex gap-4 p-6 glass rounded-xl">
-              <div className="p-3 bg-primary/20 rounded-lg text-primary">
-                <Layers className="w-6 h-6" />
-              </div>
-              <div>
-                <h4 className="font-bold text-white mb-2">Layout & Typography</h4>
-                <p className="text-white/50 text-sm">Precise visual communication through grid systems and expressive typefaces.</p>
-              </div>
-            </div>
-
-            <div className="flex gap-4 p-6 glass rounded-xl">
-              <div className="p-3 bg-primary/20 rounded-lg text-primary">
-                <Layout className="w-6 h-6" />
-              </div>
-              <div>
-                <h4 className="font-bold text-white mb-2">UI/UX Prototype Art</h4>
-                <p className="text-white/50 text-sm">Designing immersive interfaces that feel alive before the first line of code.</p>
-              </div>
-            </div>
+          
+          <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+            <h3 className="text-[15vw] font-black text-white/5 text-outline tracking-[-0.1em] italic">645 PORTRAIT</h3>
           </div>
         </div>
       </div>

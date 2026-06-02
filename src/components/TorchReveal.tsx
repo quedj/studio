@@ -1,4 +1,3 @@
-
 "use client";
 
 import React, { useRef, useEffect, useState } from 'react';
@@ -29,25 +28,24 @@ export const TorchReveal = ({ text }: { text: string }) => {
     const draw = () => {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
       
+      const fontSize = window.innerWidth < 768 ? '15vw' : '12vw';
+      
       // Draw blurry base text
-      ctx.fillStyle = 'white';
-      ctx.font = '900 8vw Poppins';
+      ctx.fillStyle = 'rgba(255, 255, 255, 0.1)';
+      ctx.font = `900 ${fontSize} Poppins`;
       ctx.textAlign = 'center';
       ctx.textBaseline = 'middle';
-      ctx.filter = 'blur(20px)';
-      ctx.globalAlpha = 0.3;
+      ctx.italic = true;
       ctx.fillText(text, canvas.width / 2, canvas.height / 2);
 
       // Draw mask for "window"
       ctx.save();
       ctx.beginPath();
-      ctx.arc(mousePos.x, mousePos.y, 150, 0, Math.PI * 2);
+      ctx.arc(mousePos.x, mousePos.y, 180, 0, Math.PI * 2);
       ctx.clip();
 
       // Draw clear text inside mask
-      ctx.filter = 'none';
-      ctx.globalAlpha = 1;
-      ctx.fillStyle = '#e60000'; // Primary neon red
+      ctx.fillStyle = '#ff0000'; // Pure neon red
       ctx.fillText(text, canvas.width / 2, canvas.height / 2);
       ctx.restore();
 
@@ -62,5 +60,5 @@ export const TorchReveal = ({ text }: { text: string }) => {
     };
   }, [mousePos, text]);
 
-  return <canvas ref={canvasRef} className="absolute inset-0 z-20" />;
+  return <canvas ref={canvasRef} className="absolute inset-0 z-20 pointer-events-none" />;
 };
