@@ -22,7 +22,7 @@ export const StaticHero = () => {
           <div className="relative w-32 h-32 mb-4 animate-float">
             <Image 
               src="/images/my-logo.png" 
-              alt="QUE Digital" 
+              alt="QUE Digital Logo" 
               fill
               className="object-contain"
               priority

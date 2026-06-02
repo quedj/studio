@@ -6,10 +6,7 @@ export const metadata: Metadata = {
   title: 'QUE Digital | Technical Architecture & Visual Design',
   description: 'Expert Marketplace App Development and Visual Architecture. Engineering digital solutions with precision.',
   icons: {
-    icon: [
-      { url: '/images/my-logo.png', sizes: 'any' },
-      { url: '/images/my-logo.png', type: 'image/png' },
-    ],
+    icon: '/images/my-logo.png',
     shortcut: '/images/my-logo.png',
     apple: '/images/my-logo.png',
   },
