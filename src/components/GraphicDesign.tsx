@@ -1,3 +1,4 @@
+
 "use client";
 
 import React, { useEffect, useRef } from 'react';
@@ -5,17 +6,32 @@ import Image from 'next/image';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel";
 
-export const SlicedPortrait = () => {
+const DESIGN_PROJECTS = [
+  PlaceHolderImages.find(img => img.id === 'design-l6-poster'),
+  PlaceHolderImages.find(img => img.id === 'portrait-design'),
+  PlaceHolderImages.find(img => img.id === 'design-abstract-1'),
+  PlaceHolderImages.find(img => img.id === 'design-minimal-brand'),
+].filter(Boolean);
+
+const SlicedProject = ({ image }: { image: any }) => {
   const containerRef = useRef(null);
   const slicesRef = useRef<HTMLDivElement[]>([]);
-  const portraitImg = PlaceHolderImages.find(img => img.id === 'portrait-design');
 
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
 
+    const slices = slicesRef.current;
+
     // Entrance animation for slices
-    gsap.fromTo(slicesRef.current, 
+    gsap.fromTo(slices, 
       { 
         y: (i) => (i % 2 === 0 ? 100 : -100), 
         opacity: 0,
@@ -24,19 +40,19 @@ export const SlicedPortrait = () => {
         y: 0, 
         opacity: 1,
         duration: 1.5,
-        stagger: 0.1,
+        stagger: 0.05,
         ease: "power4.out",
         scrollTrigger: {
           trigger: containerRef.current,
-          start: "top 80%",
+          start: "top 85%",
         }
       }
     );
 
     // Subtle parallax effect on scroll
-    slicesRef.current.forEach((slice, i) => {
+    slices.forEach((slice, i) => {
       gsap.to(slice, {
-        y: (i + 1) * 10,
+        y: (i + 1) * 5,
         ease: "none",
         scrollTrigger: {
           trigger: containerRef.current,
@@ -49,31 +65,27 @@ export const SlicedPortrait = () => {
   }, []);
 
   return (
-    <div ref={containerRef} className="relative w-full aspect-[4/5] lg:aspect-[16/9] bg-black overflow-hidden group">
-      <div className="absolute inset-0 flex gap-1 lg:gap-2 p-2 lg:p-4">
-        {[0, 1, 2, 3, 4, 5].map((i) => (
+    <div ref={containerRef} className="relative w-full aspect-[4/5] bg-black overflow-hidden group">
+      <div className="absolute inset-0 flex gap-0.5 p-1">
+        {[0, 1, 2, 3, 4, 5, 6, 7].map((i) => (
           <div 
             key={i} 
             ref={el => { if (el) slicesRef.current[i] = el; }}
-            className="flex-1 relative h-full overflow-hidden border border-white/5"
+            className="flex-1 relative h-full overflow-hidden border-x border-white/5"
           >
-            <div className="absolute top-0 left-[-100%] w-[600%] h-full">
+            <div className="absolute top-0 left-[-100%] w-[800%] h-full">
               <Image 
-                src={portraitImg?.imageUrl || ''}
-                alt={portraitImg?.description || ''}
+                src={image?.imageUrl || ''}
+                alt={image?.description || ''}
                 fill
                 className="object-cover grayscale group-hover:grayscale-0 transition-all duration-1000 scale-105 group-hover:scale-100"
-                style={{ left: `${-i * 16.66}%` }}
-                data-ai-hint={portraitImg?.imageHint}
+                style={{ left: `${-i * 12.5}%` }}
+                data-ai-hint={image?.imageHint}
               />
             </div>
             <div className="absolute inset-0 bg-primary/10 opacity-0 group-hover:opacity-20 transition-opacity duration-500" />
           </div>
         ))}
-      </div>
-      
-      <div className="absolute inset-0 flex items-center justify-center pointer-events-none z-20">
-        <h3 className="text-[12vw] font-black text-white/5 text-outline tracking-[-0.05em] italic uppercase select-none">645 PORTRAIT</h3>
       </div>
     </div>
   );
@@ -81,23 +93,47 @@ export const SlicedPortrait = () => {
 
 export const GraphicDesign = () => {
   return (
-    <section id="design" className="py-20 lg:py-40 bg-black">
+    <section id="design" className="py-20 lg:py-40 bg-black overflow-hidden">
       <div className="max-w-[1800px] mx-auto px-6 lg:px-10">
-        <div className="mb-20 flex flex-col lg:flex-row lg:items-start justify-between gap-10">
+        <div className="mb-20 flex flex-col lg:flex-row lg:items-end justify-between gap-10">
           <div>
             <h2 className="text-[10vw] font-black leading-[0.8] tracking-tighter italic uppercase">
               VISUAL <br /><span className="text-primary">CORE</span>
             </h2>
           </div>
           <div className="max-w-xl text-right ml-auto">
-             <p className="text-white/40 font-black tracking-widest text-[10px] mb-4 uppercase">Adobe Photoshop • Creative Direction</p>
+             <p className="text-white/40 font-black tracking-widest text-[10px] mb-4 uppercase">Portfolio • Adobe Photoshop • Creative Direction</p>
              <p className="text-white/60 text-lg md:text-xl leading-tight font-medium">
-               Masterful image manipulation and artistic architecture crafted through decades of design evolution. Transforming raw concepts into digital masterpieces.
+               Transforming raw concepts into digital masterpieces through masterful image manipulation and artistic architecture. Every project is a journey in visual storytelling.
              </p>
           </div>
         </div>
 
-        <SlicedPortrait />
+        <Carousel
+          opts={{
+            align: "start",
+            loop: true,
+          }}
+          className="w-full"
+        >
+          <CarouselContent className="-ml-4">
+            {DESIGN_PROJECTS.map((project: any, index: number) => (
+              <CarouselItem key={index} className="pl-4 md:basis-1/2 lg:basis-1/3">
+                <div className="space-y-4">
+                  <SlicedProject image={project} />
+                  <div className="flex justify-between items-center px-2">
+                    <span className="text-[10px] font-black uppercase tracking-widest text-white/40">Project 0{index + 1}</span>
+                    <h4 className="text-sm font-bold uppercase tracking-tighter italic">{project.description.split(' ').slice(0, 3).join(' ')}</h4>
+                  </div>
+                </div>
+              </CarouselItem>
+            ))}
+          </CarouselContent>
+          <div className="flex justify-end gap-2 mt-8 px-2">
+            <CarouselPrevious className="static translate-y-0 bg-white/5 border-white/10 hover:bg-primary hover:text-white rounded-none w-12 h-12" />
+            <CarouselNext className="static translate-y-0 bg-white/5 border-white/10 hover:bg-primary hover:text-white rounded-none w-12 h-12" />
+          </div>
+        </Carousel>
       </div>
     </section>
   );

@@ -29,6 +29,24 @@
       "description": "Detailed portrait image for graphic design showcase",
       "imageUrl": "https://picsum.photos/seed/645/1920/1080",
       "imageHint": "portrait design"
+    },
+    {
+      "id": "design-l6-poster",
+      "description": "Graphic design poster for L6 event featuring bold typography and abstract shapes",
+      "imageUrl": "https://picsum.photos/seed/l6poster/1200/1600",
+      "imageHint": "graphic poster"
+    },
+    {
+      "id": "design-abstract-1",
+      "description": "Abstract geometric graphic design piece with vibrant colors",
+      "imageUrl": "https://picsum.photos/seed/abstract1/1200/1600",
+      "imageHint": "abstract design"
+    },
+    {
+      "id": "design-minimal-brand",
+      "description": "Minimalist branding and identity graphic design work",
+      "imageUrl": "https://picsum.photos/seed/minimalbrand/1200/1600",
+      "imageHint": "minimalist brand"
     }
   ]
 }
