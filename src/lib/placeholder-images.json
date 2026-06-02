@@ -1,22 +1,16 @@
 {
   "placeholderImages": [
     {
-      "id": "tech-hero",
-      "description": "Modern software development environment with high-tech screens",
-      "imageUrl": "https://picsum.photos/seed/tech123/1200/800",
-      "imageHint": "software development"
-    },
-    {
-      "id": "dj-hero",
-      "description": "Professional DJ at a high-energy club event with red lighting",
-      "imageUrl": "https://picsum.photos/seed/dj456/1200/800",
-      "imageHint": "dj turntable"
-    },
-    {
       "id": "featured-design-piece",
       "description": "QUE DESIGN PORTFOLIO FEATURE",
       "imageUrl": "https://drive.google.com/uc?export=view&id=1N4X96Lq7m6L7Sgga7Se6dIDAAJEF8ss0",
       "imageHint": "graphic design"
+    },
+    {
+      "id": "ami-consulting",
+      "description": "AMI CONSULTING BRANDING",
+      "imageUrl": "https://picsum.photos/seed/ami/1200/1600",
+      "imageHint": "minimalist logo design"
     },
     {
       "id": "experimental-poster",
