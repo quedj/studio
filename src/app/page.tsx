@@ -1,19 +1,20 @@
-
-import { SplitHero } from '@/components/SplitHero';
-import { AITool } from '@/components/AITool';
-import { Timeline } from '@/components/Timeline';
-import { BookingPortal } from '@/components/BookingPortal';
-import { Footer } from '@/components/Footer';
+import { Navbar } from '@/components/Navbar';
+import { StaticHero } from '@/components/StaticHero';
+import { StaticServices } from '@/components/StaticServices';
+import { StaticWhyUs } from '@/components/StaticWhyUs';
+import { StaticContact } from '@/components/StaticContact';
+import { StaticFooter } from '@/components/StaticFooter';
 import { Toaster } from '@/components/ui/toaster';
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-black text-white">
-      <SplitHero />
-      <AITool />
-      <Timeline />
-      <BookingPortal />
-      <Footer />
+    <main className="min-h-screen bg-black text-white scroll-smooth">
+      <Navbar />
+      <StaticHero />
+      <StaticServices />
+      <StaticWhyUs />
+      <StaticContact />
+      <StaticFooter />
       <Toaster />
     </main>
   );
