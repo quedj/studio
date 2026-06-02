@@ -10,7 +10,7 @@ export const StaticFeaturedProject = () => {
       {/* Background Accent */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-primary/5 rounded-full blur-[120px] pointer-events-none" />
       
-      <div className="max-w-6xl mx-auto relative z-10">
+      <div className="max-w-4xl mx-auto relative z-10">
         <div className="text-center mb-16">
           <span className="text-primary font-bold tracking-[0.4em] uppercase text-sm mb-4 block">Coming Soon</span>
           <h2 className="font-headline text-4xl md:text-6xl font-black tracking-tighter uppercase mb-6">
@@ -18,8 +18,8 @@ export const StaticFeaturedProject = () => {
           </h2>
         </div>
 
-        <div className="bg-secondary/20 border border-white/5 p-8 md:p-16 rounded-2xl flex flex-col md:flex-row items-center gap-12 group hover:border-primary/30 transition-all duration-500">
-          <div className="flex-1 space-y-6">
+        <div className="bg-secondary/20 border border-white/5 p-8 md:p-16 rounded-2xl flex flex-col items-center text-center gap-12 group hover:border-primary/30 transition-all duration-500">
+          <div className="space-y-6 flex flex-col items-center">
             <div className="inline-flex p-4 rounded-xl bg-primary/10 border border-primary/20 text-primary">
               <Rocket className="w-8 h-8" />
             </div>
@@ -37,17 +37,6 @@ export const StaticFeaturedProject = () => {
                 </a>
               </Button>
             </div>
-          </div>
-          
-          <div className="flex-1 w-full aspect-video md:aspect-square relative bg-black/40 border border-white/10 rounded-xl overflow-hidden flex items-center justify-center group-hover:border-primary/40 transition-all duration-500">
-             <div className="text-center p-8">
-               <span className="text-6xl md:text-8xl font-black text-white/5 select-none">SPARETOOLS</span>
-               <div className="mt-4 flex justify-center gap-2">
-                 <div className="w-2 h-2 rounded-full bg-primary animate-pulse" />
-                 <div className="w-2 h-2 rounded-full bg-primary animate-pulse delay-75" />
-                 <div className="w-2 h-2 rounded-full bg-primary animate-pulse delay-150" />
-               </div>
-             </div>
           </div>
         </div>
       </div>

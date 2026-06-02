@@ -1,4 +1,3 @@
-
 "use client";
 
 import React, { useEffect, useRef } from 'react';
@@ -7,7 +6,7 @@ import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
 import { Button } from '@/components/ui/button';
-import { ExternalLink } from 'lucide-react';
+import { ExternalLink, Facebook } from 'lucide-react';
 
 export const ImageGallery = () => {
   const containerRef = useRef(null);
@@ -49,17 +48,27 @@ export const ImageGallery = () => {
           </div>
           <div className="max-w-md md:text-right space-y-6">
             <p className="text-white/40 text-sm font-medium leading-relaxed uppercase tracking-widest">
-              A curated collection of visual identities, architectural studies, and experimental typography. Explore the full digital archive via the link below.
+              A curated collection of visual identities, architectural studies, and experimental typography. Explore more of my work through my digital archives.
             </p>
-            <Button 
-              asChild
-              variant="outline"
-              className="border-primary/30 text-primary hover:bg-primary hover:text-white transition-all rounded-none uppercase text-[10px] font-black tracking-widest px-8"
-            >
-              <a href="https://drive.google.com/drive/u/0/folders/19HIQcMfTbTNMTQWWjafDNTnUra8u1BA2" target="_blank" rel="noopener noreferrer">
-                View Full Drive Archive <ExternalLink className="ml-2 w-3 h-3" />
-              </a>
-            </Button>
+            <div className="flex flex-col sm:flex-row gap-4 justify-end">
+              <Button 
+                asChild
+                variant="outline"
+                className="border-primary/30 text-primary hover:bg-primary hover:text-white transition-all rounded-none uppercase text-[10px] font-black tracking-widest px-8"
+              >
+                <a href="https://drive.google.com/drive/u/0/folders/19HIQcMfTbTNMTQWWjafDNTnUra8u1BA2" target="_blank" rel="noopener noreferrer">
+                  Google Drive <ExternalLink className="ml-2 w-3 h-3" />
+                </a>
+              </Button>
+              <Button 
+                asChild
+                className="bg-[#1877F2] hover:bg-white hover:text-[#1877F2] text-white border-none transition-all rounded-none uppercase text-[10px] font-black tracking-widest px-8"
+              >
+                <a href="https://www.facebook.com/thuthuthecreator/" target="_blank" rel="noopener noreferrer">
+                  View on Facebook <Facebook className="ml-2 w-3 h-3" />
+                </a>
+              </Button>
+            </div>
           </div>
         </div>
 
