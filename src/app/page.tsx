@@ -1,3 +1,4 @@
+
 "use client";
 
 import React, { useEffect, useRef } from 'react';
@@ -9,7 +10,7 @@ import { AIShowcase } from '@/components/AIShowcase';
 import { ImageGallery } from '@/components/ImageGallery';
 import { StaticServices } from '@/components/StaticServices';
 import { StaticFeaturedProject } from '@/components/StaticFeaturedProject';
-import { BookingPortal } from '@/components/BookingPortal';
+import { StaticContact } from '@/components/StaticContact';
 import { StaticFooter } from '@/components/StaticFooter';
 import { StaticHero } from '@/components/StaticHero';
 import { Toaster } from '@/components/ui/toaster';
@@ -76,7 +77,7 @@ export default function Home() {
         </div>
 
         <div className="scroll-reveal">
-          <BookingPortal />
+          <StaticContact />
         </div>
 
         <StaticFooter />

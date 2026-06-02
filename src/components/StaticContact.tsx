@@ -1,3 +1,4 @@
+
 "use client";
 
 import React from 'react';
@@ -5,43 +6,60 @@ import { Mail, Phone, MapPin } from 'lucide-react';
 
 export const StaticContact = () => {
   return (
-    <section id="contact" className="py-32 px-6 bg-black border-t border-white/5">
-      <div className="max-w-4xl mx-auto text-center">
-        <h2 className="font-headline text-4xl md:text-5xl font-bold tracking-tighter uppercase mb-6 leading-tight">
-          Ready to <span className="text-primary">Connect?</span>
-        </h2>
-        <p className="text-white/60 text-lg mb-16 leading-relaxed max-w-2xl mx-auto">
-          Whether you're looking for a technology partner to build your next marketplace or have a professional inquiry, reach out through our official channels.
-        </p>
-        
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
-          <div className="flex flex-col items-center gap-4 group">
-            <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-all duration-300">
-              <Mail className="w-8 h-8" />
-            </div>
-            <div>
-              <p className="text-sm text-white/40 uppercase tracking-widest font-bold mb-1">Email Us</p>
-              <a href="mailto:tr16945@gmail.com" className="text-xl font-bold hover:text-primary transition-colors">tr16945@gmail.com</a>
-            </div>
+    <section id="contact" className="py-40 px-6 bg-black">
+      <div className="max-w-[1400px] mx-auto">
+        <div className="flex flex-col lg:flex-row gap-20">
+          <div className="flex-1">
+            <h2 className="text-[10vw] lg:text-[8vw] font-black leading-[0.85] tracking-tighter italic uppercase mb-12">
+              GET IN <br />
+              <span className="text-outline">TOUCH</span>
+            </h2>
+            <p className="text-white/60 text-xl md:text-2xl font-medium leading-tight max-w-xl">
+              Ready to elevate your digital presence or curate an unforgettable sonic experience? Contact me directly through the channels below.
+            </p>
           </div>
+          
+          <div className="flex-1 space-y-12">
+            <div className="group border-b border-white/10 pb-8 hover:border-primary transition-colors">
+              <div className="flex items-center gap-6">
+                <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-all">
+                  <Mail className="w-6 h-6" />
+                </div>
+                <div>
+                  <p className="text-[10px] font-black tracking-widest uppercase text-white/40 mb-1">Email</p>
+                  <a href="mailto:tr16945@gmail.com" className="text-2xl md:text-3xl font-black italic hover:text-primary transition-colors">
+                    TR16945@GMAIL.COM
+                  </a>
+                </div>
+              </div>
+            </div>
 
-          <div className="flex flex-col items-center gap-4 group">
-            <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-all duration-300">
-              <Phone className="w-8 h-8" />
+            <div className="group border-b border-white/10 pb-8 hover:border-primary transition-colors">
+              <div className="flex items-center gap-6">
+                <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-all">
+                  <Phone className="w-6 h-6" />
+                </div>
+                <div>
+                  <p className="text-[10px] font-black tracking-widest uppercase text-white/40 mb-1">Mobile</p>
+                  <a href="tel:0713540876" className="text-2xl md:text-3xl font-black italic hover:text-primary transition-colors">
+                    071 354 0876
+                  </a>
+                </div>
+              </div>
             </div>
-            <div>
-              <p className="text-sm text-white/40 uppercase tracking-widest font-bold mb-1">Call Us</p>
-              <a href="tel:0713540876" className="text-xl font-bold hover:text-primary transition-colors">0713540876</a>
-            </div>
-          </div>
 
-          <div className="flex flex-col items-center gap-4 group">
-            <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-all duration-300">
-              <MapPin className="w-8 h-8" />
-            </div>
-            <div>
-              <p className="text-sm text-white/40 uppercase tracking-widest font-bold mb-1">Location</p>
-              <p className="text-xl font-bold">Johannesburg, South Africa</p>
+            <div className="group border-b border-white/10 pb-8">
+              <div className="flex items-center gap-6">
+                <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center text-primary">
+                  <MapPin className="w-6 h-6" />
+                </div>
+                <div>
+                  <p className="text-[10px] font-black tracking-widest uppercase text-white/40 mb-1">Base</p>
+                  <p className="text-2xl md:text-3xl font-black italic uppercase">
+                    JOHANNESBURG, SA
+                  </p>
+                </div>
+              </div>
             </div>
           </div>
         </div>
