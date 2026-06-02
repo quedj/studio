@@ -1,3 +1,28 @@
 {
-  "placeholderImages": []
+  "placeholderImages": [
+    {
+      "id": "tech-hero",
+      "description": "Modern software development environment with high-tech screens",
+      "imageUrl": "https://picsum.photos/seed/tech123/1200/800",
+      "imageHint": "software development"
+    },
+    {
+      "id": "dj-hero",
+      "description": "Professional DJ at a high-energy club event with red lighting",
+      "imageUrl": "https://picsum.photos/seed/dj456/1200/800",
+      "imageHint": "dj turntable"
+    },
+    {
+      "id": "marketplace-preview",
+      "description": "Mobile app mockup showing a marketplace interface",
+      "imageUrl": "https://picsum.photos/seed/app789/600/400",
+      "imageHint": "mobile app"
+    },
+    {
+      "id": "event-crowd",
+      "description": "Energetic crowd at a music festival with red stage lights",
+      "imageUrl": "https://picsum.photos/seed/crowd101/1200/600",
+      "imageHint": "concert crowd"
+    }
+  ]
 }
