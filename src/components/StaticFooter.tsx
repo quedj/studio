@@ -1,30 +1,44 @@
 
+"use client";
+
 import React from 'react';
 
 export const StaticFooter = () => {
   return (
-    <footer className="py-20 px-6 border-t border-white/5 bg-black">
-      <div className="max-w-6xl mx-auto">
-        <div className="flex flex-col md:flex-row justify-between items-center gap-10">
-          <div>
-            <h2 className="font-headline text-3xl font-bold tracking-tighter uppercase mb-2">
-              QUE <span className="text-primary">DIGITAL</span>
-            </h2>
-            <p className="text-white/30 text-sm font-body uppercase tracking-[0.2em]">Build. Scale. Evolve.</p>
+    <footer className="py-24 px-6 border-t border-white/5 bg-black">
+      <div className="max-w-[1800px] mx-auto">
+        <div className="flex flex-col md:flex-row justify-between items-end gap-12">
+          <div className="space-y-6">
+            <div className="flex items-center gap-3">
+              <div className="w-10 h-10 border-2 border-white rounded-full flex items-center justify-center">
+                <span className="font-headline font-black text-sm italic tracking-tighter">
+                  Q<span className="text-primary">U</span>E
+                </span>
+              </div>
+              <h2 className="font-headline text-2xl font-black tracking-tighter uppercase italic">
+                Digital
+              </h2>
+            </div>
+            <p className="text-white/20 text-[10px] font-black uppercase tracking-[0.4em]">Build. Scale. Evolve.</p>
           </div>
 
-          <div className="text-center md:text-right">
-            <p className="text-white/40 text-sm mb-2 uppercase tracking-wider">
-              &copy; {new Date().getFullYear()} QUE DIGITAL. ALL RIGHTS RESERVED.
-            </p>
-            <div className="mt-2">
+          <div className="flex flex-col items-end gap-4">
+             <div className="bg-white/5 px-4 py-2 border border-white/10">
+                <p className="text-[10px] font-black uppercase tracking-widest text-white/40">
+                  DEVELOPED BY : <span className="text-white">THUTHU</span>
+                </p>
+             </div>
+            <div className="text-right">
+              <p className="text-white/20 text-[10px] uppercase tracking-widest font-bold">
+                &copy; {new Date().getFullYear()} QUE DIGITAL. ALL RIGHTS RESERVED.
+              </p>
               <a 
                 href="https://www.sparetools.co.za" 
                 target="_blank" 
                 rel="noopener noreferrer" 
-                className="text-xs text-primary/50 hover:text-primary transition-colors uppercase tracking-widest font-bold"
+                className="text-[10px] text-primary/40 hover:text-primary transition-colors uppercase tracking-[0.2em] font-black italic block mt-2"
               >
-                Sparetools - A QUE DIGITAL Project
+                Sparetools - A QUE Digital Project
               </a>
             </div>
           </div>

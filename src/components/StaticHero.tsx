@@ -6,48 +6,50 @@ import { ChevronRight, Code2 } from 'lucide-react';
 
 export const StaticHero = () => {
   return (
-    <section id="home" className="relative h-screen flex items-center justify-center overflow-hidden">
+    <section id="home" className="relative h-screen flex items-center justify-center overflow-hidden bg-black">
       {/* Background Glows */}
       <div className="absolute top-1/4 -left-20 w-96 h-96 bg-primary/20 rounded-full blur-[120px]" />
-      <div className="absolute bottom-1/4 -right-20 w-96 h-96 bg-purple-600/10 rounded-full blur-[120px]" />
+      <div className="absolute bottom-1/4 -right-20 w-96 h-96 bg-primary/10 rounded-full blur-[120px]" />
       
       <div className="relative z-10 max-w-4xl px-6 text-center mt-12">
-        <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-primary/30 bg-primary/5 mb-6">
+        <div className="inline-flex items-center gap-2 px-6 py-2 rounded-full border border-primary/30 bg-primary/5 mb-10">
           <Code2 className="w-4 h-4 text-primary" />
-          <span className="text-xs font-bold uppercase tracking-widest text-primary">Full-Stack Developer & Tech Architect</span>
+          <span className="text-[10px] font-black uppercase tracking-widest text-primary">Technical Architect • Visual Designer</span>
         </div>
         
-        <h1 className="font-headline text-5xl md:text-8xl font-black tracking-tighter mb-6 leading-none uppercase">
-          I AM <span className="text-primary">QUE</span>
-        </h1>
+        <div className="mb-8 flex flex-col items-center justify-center gap-4">
+          <div className="w-24 h-24 border-4 border-white rounded-full flex items-center justify-center mb-4">
+             <span className="font-headline font-black text-5xl italic tracking-tighter">
+              Q<span className="text-primary">U</span>E
+            </span>
+          </div>
+          <h1 className="font-headline text-6xl md:text-9xl font-black tracking-tighter leading-none uppercase italic">
+            DIGITAL
+          </h1>
+        </div>
         
-        <p className="text-white font-body text-xl md:text-2xl uppercase tracking-[0.3em] mb-8 font-bold">
-          The Mind Behind Digital Evolution & Design
+        <p className="text-white/60 text-lg md:text-xl font-body max-w-2xl mx-auto mb-12 leading-relaxed uppercase tracking-[0.2em] font-medium">
+          Building high‑quality digital solutions <br /> that bridge the gap between people and technology.
         </p>
         
-        <p className="text-white/70 text-lg md:text-xl font-body max-w-2xl mx-auto mb-10 leading-relaxed">
-          I build high‑quality digital solutions that bridge the gap between people and technology. 
-          Focused on scalable marketplace ecosystems and refined visual architecture.
-        </p>
-        
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
           <button 
-            className="bg-primary hover:bg-white hover:text-black text-white px-8 py-4 text-sm rounded-none uppercase tracking-widest font-black border-2 border-primary transition-all duration-300 flex items-center gap-2"
+            className="bg-primary hover:bg-white hover:text-black text-white px-10 py-5 text-xs rounded-none uppercase tracking-widest font-black border-2 border-primary transition-all duration-500 flex items-center gap-2 shadow-[0_0_30px_rgba(255,0,0,0.2)]"
             onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
           >
-            Work with Me <ChevronRight className="w-4 h-4" />
+            Start a project <ChevronRight className="w-4 h-4" />
           </button>
           <button 
-            className="border-2 border-white/20 hover:border-primary text-white bg-transparent px-8 py-4 text-sm rounded-none uppercase tracking-widest font-black transition-all duration-300"
+            className="border-2 border-white/10 hover:border-primary text-white bg-transparent px-10 py-5 text-xs rounded-none uppercase tracking-widest font-black transition-all duration-500"
             onClick={() => document.getElementById('services')?.scrollIntoView({ behavior: 'smooth' })}
           >
-            View Expertise
+            Capabilities
           </button>
         </div>
       </div>
 
-      <div className="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce opacity-40">
-        <div className="w-px h-12 bg-gradient-to-b from-primary to-transparent" />
+      <div className="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce opacity-20">
+        <div className="w-px h-16 bg-gradient-to-b from-primary to-transparent" />
       </div>
     </section>
   );
