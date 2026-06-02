@@ -16,6 +16,7 @@ export const Navbar = () => {
 
   const navLinks = [
     { name: 'Home', href: '#home' },
+    { name: 'About', href: '#about' },
     { name: 'Services', href: '#services' },
     { name: 'Projects', href: '#projects' },
     { name: 'Contact', href: '#contact' },
@@ -27,11 +28,11 @@ export const Navbar = () => {
       scrolled ? "bg-black/95 backdrop-blur-md border-b border-primary/20" : "bg-transparent"
     )}>
       <div className="bg-primary text-white py-2 px-4 text-center text-[10px] md:text-xs font-bold uppercase tracking-widest">
-        Announcement: We are transitioning to App Development and moving away from professional DJ services.
+        Announcement: I am transitioning to App Development and moving away from professional DJ services.
       </div>
       <div className="max-w-7xl mx-auto flex justify-between items-center px-6 py-4">
         <div className="font-headline font-bold text-2xl tracking-tighter">
-          QUE <span className="text-primary">DJ EXPERIENCE</span>
+          QUE <span className="text-primary">PROFILE</span>
         </div>
         
         <div className="hidden md:flex items-center gap-8">
