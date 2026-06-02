@@ -1,27 +1,28 @@
 "use client";
 
-import React, { useState, useEffect } from 'react';
+import React, { useEffect, useRef } from 'react';
+import gsap from 'gsap';
 
 export const CursorGlow = () => {
-  const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
-  const [isVisible, setIsVisible] = useState(false);
+  const cursorRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    const handleMouseMove = (e: MouseEvent) => {
-      setMousePos({ x: e.clientX, y: e.clientY });
-      if (!isVisible) setIsVisible(true);
+    if (!cursorRef.current) return;
+
+    const cursor = cursorRef.current;
+    
+    const moveCursor = (e: MouseEvent) => {
+      gsap.to(cursor, {
+        x: e.clientX,
+        y: e.clientY,
+        duration: 0.8,
+        ease: "power2.out"
+      });
     };
 
-    window.addEventListener('mousemove', handleMouseMove);
-    return () => window.removeEventListener('mousemove', handleMouseMove);
-  }, [isVisible]);
+    window.addEventListener('mousemove', moveCursor);
+    return () => window.removeEventListener('mousemove', moveCursor);
+  }, []);
 
-  return (
-    <div 
-      className={`pointer-events-none fixed inset-0 z-0 transition-opacity duration-1000 ${isVisible ? 'opacity-100' : 'opacity-0'}`}
-      style={{
-        background: `radial-gradient(800px at ${mousePos.x}px ${mousePos.y}px, hsla(0, 100%, 45%, 0.07), transparent 80%)`,
-      }}
-    />
-  );
+  return <div ref={cursorRef} className="cursor-blob" id="main-cursor" />;
 };

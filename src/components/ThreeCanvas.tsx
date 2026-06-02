@@ -17,10 +17,9 @@ export const ThreeCanvas = () => {
     renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
     containerRef.current.appendChild(renderer.domElement);
 
-    // More aggressive geometry for Lando style
-    const geometry = new THREE.TorusKnotGeometry(15, 0.5, 200, 32);
+    const geometry = new THREE.TorusKnotGeometry(12, 0.4, 256, 32);
     const material = new THREE.MeshBasicMaterial({ 
-      color: 0xff0000, 
+      color: 0xff3366, 
       wireframe: true, 
       transparent: true, 
       opacity: 0.15 
@@ -28,15 +27,14 @@ export const ThreeCanvas = () => {
     const torusKnot = new THREE.Mesh(geometry, material);
     scene.add(torusKnot);
 
-    // Floating particles
     const particlesGeometry = new THREE.BufferGeometry();
-    const count = 500;
+    const count = 1000;
     const positions = new Float32Array(count * 3);
     for(let i = 0; i < count * 3; i++) {
-      positions[i] = (Math.random() - 0.5) * 100;
+      positions[i] = (Math.random() - 0.5) * 150;
     }
     particlesGeometry.setAttribute('position', new THREE.BufferAttribute(positions, 3));
-    const particlesMaterial = new THREE.PointsMaterial({ color: 0xffffff, size: 0.05, transparent: true, opacity: 0.5 });
+    const particlesMaterial = new THREE.PointsMaterial({ color: 0xffffff, size: 0.05, transparent: true, opacity: 0.3 });
     const particles = new THREE.Points(particlesGeometry, particlesMaterial);
     scene.add(particles);
 
@@ -46,8 +44,8 @@ export const ThreeCanvas = () => {
     let mouseY = 0;
 
     const handleMouseMove = (event: MouseEvent) => {
-      mouseX = (event.clientX - window.innerWidth / 2) * 0.005;
-      mouseY = (event.clientY - window.innerHeight / 2) * 0.005;
+      mouseX = (event.clientX - window.innerWidth / 2) * 0.002;
+      mouseY = (event.clientY - window.innerHeight / 2) * 0.002;
     };
 
     const handleResize = () => {
@@ -62,9 +60,9 @@ export const ThreeCanvas = () => {
     let animationFrameId: number;
     const animate = () => {
       animationFrameId = requestAnimationFrame(animate);
-      torusKnot.rotation.x += 0.002;
-      torusKnot.rotation.y += 0.003;
-      particles.rotation.y += 0.001;
+      torusKnot.rotation.x += 0.001;
+      torusKnot.rotation.y += 0.002;
+      particles.rotation.y += 0.0005;
 
       torusKnot.position.x += (mouseX - torusKnot.position.x) * 0.05;
       torusKnot.position.y += (-mouseY - torusKnot.position.y) * 0.05;
@@ -87,5 +85,5 @@ export const ThreeCanvas = () => {
     };
   }, []);
 
-  return <div ref={containerRef} className="fixed inset-0 z-0 pointer-events-none opacity-50" />;
+  return <div ref={containerRef} className="fixed inset-0 z-0 pointer-events-none opacity-40" />;
 };
