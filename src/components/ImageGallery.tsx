@@ -80,7 +80,7 @@ export const ImageGallery = () => {
                 sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700 flex flex-col justify-end p-8">
-                <span className="text-[10px] font-black uppercase tracking-[0.3em] text-primary mb-2">0{index + 1} // ARTWORK</span>
+                <span className="text-[10px] font-black uppercase tracking-[0.3em] text-primary mb-2">0{index + 1} // PROJECT</span>
                 <h4 className="text-lg font-bold uppercase italic tracking-tighter leading-tight text-white">
                   {project.description}
                 </h4>

@@ -7,22 +7,22 @@
       "imageHint": "graphic design"
     },
     {
-      "id": "ami-consulting",
-      "description": "AMI CONSULTING BRANDING",
-      "imageUrl": "/images/ami.png",
-      "imageHint": "minimalist logo"
+      "id": "design-project-1",
+      "description": "BRANDING IDENTITY SYSTEM",
+      "imageUrl": "/images/192983106_3958142424293471_7739.jpg",
+      "imageHint": "minimalist branding"
     },
     {
-      "id": "experimental-poster",
-      "description": "EXPERIMENTAL TYPOGRAPHY POSTER",
-      "imageUrl": "/images/experimental-poster.jpg",
+      "id": "design-project-2",
+      "description": "EXPERIMENTAL TYPOGRAPHY",
+      "imageUrl": "/images/193306919_3962229517218095_8651.jpg",
       "imageHint": "modern typography"
     },
     {
-      "id": "visual-architecture",
+      "id": "design-project-3",
       "description": "VISUAL ARCHITECTURE STUDY",
-      "imageUrl": "/images/visual-architecture.jpg",
-      "imageHint": "architectural abstract"
+      "imageUrl": "/images/193936320_3958335590940821_8782.jpg",
+      "imageHint": "architectural design"
     }
   ]
 }
