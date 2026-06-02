@@ -13,12 +13,6 @@
       "imageHint": "dj turntable"
     },
     {
-      "id": "marketplace-preview",
-      "description": "Mobile app mockup showing a marketplace interface",
-      "imageUrl": "https://picsum.photos/seed/app789/600/400",
-      "imageHint": "mobile app"
-    },
-    {
       "id": "ami-consulting",
       "description": "AMI CONSULTING FIRM BRANDING",
       "imageUrl": "https://picsum.photos/seed/ami/1200/1600",
