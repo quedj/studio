@@ -15,13 +15,13 @@
     {
       "id": "experimental-poster",
       "description": "EXPERIMENTAL TYPOGRAPHY POSTER",
-      "imageUrl": "/images/poster.png",
+      "imageUrl": "/images/experimental-poster.jpg",
       "imageHint": "modern typography"
     },
     {
       "id": "visual-architecture",
       "description": "VISUAL ARCHITECTURE STUDY",
-      "imageUrl": "/images/architecture.png",
+      "imageUrl": "/images/visual-architecture.jpg",
       "imageHint": "architectural abstract"
     }
   ]
