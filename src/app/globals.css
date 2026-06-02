@@ -23,7 +23,7 @@
     --border: 240 3.7% 15.9%;
     --input: 240 3.7% 15.9%;
     --ring: 0 72% 51%;
-    --radius: 0rem;
+    --radius: 0.5rem;
   }
 }
 
@@ -32,44 +32,21 @@
     @apply border-border;
   }
   body {
-    @apply bg-black text-foreground antialiased selection:bg-primary selection:text-white uppercase overflow-x-hidden;
-    font-family: 'Poppins', sans-serif;
-  }
-  html {
-    @apply scroll-smooth;
+    @apply bg-black text-foreground antialiased selection:bg-primary selection:text-white;
+    font-family: 'Inter', sans-serif;
   }
 }
 
-.text-outline {
-  -webkit-text-stroke: 1px rgba(255, 255, 255, 0.3);
-  color: transparent;
+.text-glow-primary {
+  text-shadow: 0 0 20px hsla(var(--primary), 0.5);
 }
 
-.glass {
-  @apply bg-white/5 backdrop-blur-xl border border-white/10;
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0px); }
 }
 
-.hero-gradient {
-  background: radial-gradient(circle at 50% 50%, hsla(var(--primary), 0.15) 0%, transparent 70%);
-}
-
-.disco-mode {
-  animation: disco-bg 2s linear infinite;
-}
-
-@keyframes disco-bg {
-  0% { filter: hue-rotate(0deg); }
-  100% { filter: hue-rotate(360deg); }
-}
-
-canvas {
-  touch-action: none;
-}
-
-section {
-  @apply relative min-h-screen flex flex-col justify-center overflow-hidden;
-}
-
-.reveal-text {
-  clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+.animate-float {
+  animation: float 3s ease-in-out infinite;
 }
