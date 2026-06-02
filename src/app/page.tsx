@@ -2,7 +2,6 @@ import { Navbar } from '@/components/Navbar';
 import { StaticHero } from '@/components/StaticHero';
 import { StaticServices } from '@/components/StaticServices';
 import { StaticWhyUs } from '@/components/StaticWhyUs';
-import { StaticFeaturedProject } from '@/components/StaticFeaturedProject';
 import { StaticContact } from '@/components/StaticContact';
 import { StaticFooter } from '@/components/StaticFooter';
 import { Toaster } from '@/components/ui/toaster';
@@ -14,7 +13,6 @@ export default function Home() {
       <StaticHero />
       <StaticServices />
       <StaticWhyUs />
-      <StaticFeaturedProject />
       <StaticContact />
       <StaticFooter />
       <Toaster />

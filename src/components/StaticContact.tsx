@@ -32,7 +32,7 @@ export const StaticContact = () => {
                 </div>
                 <div>
                   <p className="text-sm text-white/40 uppercase tracking-widest font-bold">Email Us</p>
-                  <p className="text-lg font-bold">hello@quedjexperience.co.za</p>
+                  <p className="text-lg font-bold">tr16945@gmail.com</p>
                 </div>
               </div>
               <div className="flex items-center gap-4">
@@ -41,7 +41,7 @@ export const StaticContact = () => {
                 </div>
                 <div>
                   <p className="text-sm text-white/40 uppercase tracking-widest font-bold">Call Us</p>
-                  <p className="text-lg font-bold">+27 (0) 123 456 789</p>
+                  <p className="text-lg font-bold">0713540876</p>
                 </div>
               </div>
               <div className="flex items-center gap-4">
