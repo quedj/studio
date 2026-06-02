@@ -2,6 +2,7 @@
 "use client";
 
 import React from 'react';
+import Image from 'next/image';
 import { ChevronRight, Code2 } from 'lucide-react';
 
 export const StaticHero = () => {
@@ -18,13 +19,17 @@ export const StaticHero = () => {
         </div>
         
         <div className="mb-8 flex flex-col items-center justify-center gap-4">
-          <div className="w-24 h-24 border-4 border-white rounded-full flex items-center justify-center mb-4">
-             <span className="font-headline font-black text-5xl italic tracking-tighter">
-              Q<span className="text-primary">U</span>E
-            </span>
+          <div className="relative w-32 h-32 mb-4 animate-float">
+            <Image 
+              src="/images/my-logo.png" 
+              alt="QUE Digital" 
+              fill
+              className="object-contain"
+              priority
+            />
           </div>
           <h1 className="font-headline text-6xl md:text-9xl font-black tracking-tighter leading-none uppercase italic">
-            DIGITAL
+            QUE <span className="text-primary">DIGITAL</span>
           </h1>
         </div>
         

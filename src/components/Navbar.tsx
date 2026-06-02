@@ -2,6 +2,7 @@
 "use client";
 
 import React, { useState, useEffect } from 'react';
+import Image from 'next/image';
 import { cn } from '@/lib/utils';
 
 export const Navbar = () => {
@@ -29,17 +30,19 @@ export const Navbar = () => {
     )}>
       <div className="max-w-[1800px] mx-auto flex justify-between items-center px-6 lg:px-10">
         <div 
-          className="flex items-center gap-3 group cursor-pointer"
+          className="flex items-center gap-4 group cursor-pointer"
           onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
         >
-          <div className="relative flex items-center justify-center w-12 h-12 border-2 border-white rounded-full transition-all duration-500 group-hover:border-primary group-hover:scale-110">
-            <span className="font-headline font-black text-xl italic tracking-tighter">
-              Q<span className="text-primary transition-colors group-hover:text-white">U</span>E
-            </span>
-            <div className="absolute -bottom-1 -right-1 w-3 h-3 bg-primary rounded-full border-2 border-black" />
+          <div className="relative w-12 h-12 transition-all duration-500 group-hover:scale-110">
+            <Image 
+              src="/images/my-logo.png" 
+              alt="QUE Digital Logo" 
+              fill
+              className="object-contain"
+            />
           </div>
           <div className="font-headline font-black text-2xl tracking-tighter italic uppercase">
-            Digital
+            QUE <span className="text-primary">Digital</span>
           </div>
         </div>
         
