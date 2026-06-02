@@ -23,6 +23,12 @@
       "description": "Energetic crowd at a music festival with red stage lights",
       "imageUrl": "https://picsum.photos/seed/crowd101/1200/600",
       "imageHint": "concert crowd"
+    },
+    {
+      "id": "portrait-design",
+      "description": "Detailed portrait image for graphic design showcase",
+      "imageUrl": "https://picsum.photos/seed/645/1920/1080",
+      "imageHint": "portrait design"
     }
   ]
 }

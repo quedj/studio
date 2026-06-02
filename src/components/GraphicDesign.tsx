@@ -4,10 +4,12 @@ import React, { useEffect, useRef } from 'react';
 import Image from 'next/image';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { PlaceHolderImages } from '@/lib/placeholder-images';
 
 export const SlicedPortrait = () => {
   const containerRef = useRef(null);
   const slicesRef = useRef<HTMLDivElement[]>([]);
+  const portraitImg = PlaceHolderImages.find(img => img.id === 'portrait-design');
 
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
@@ -15,14 +17,12 @@ export const SlicedPortrait = () => {
     // Entrance animation for slices
     gsap.fromTo(slicesRef.current, 
       { 
-        y: (i) => (i % 2 === 0 ? 200 : -200), 
+        y: (i) => (i % 2 === 0 ? 100 : -100), 
         opacity: 0,
-        scale: 1.2,
       },
       { 
         y: 0, 
         opacity: 1,
-        scale: 1,
         duration: 1.5,
         stagger: 0.1,
         ease: "power4.out",
@@ -33,10 +33,10 @@ export const SlicedPortrait = () => {
       }
     );
 
-    // Parallax effect on scroll
+    // Subtle parallax effect on scroll
     slicesRef.current.forEach((slice, i) => {
       gsap.to(slice, {
-        y: (i + 1) * 20,
+        y: (i + 1) * 10,
         ease: "none",
         scrollTrigger: {
           trigger: containerRef.current,
@@ -55,25 +55,25 @@ export const SlicedPortrait = () => {
           <div 
             key={i} 
             ref={el => { if (el) slicesRef.current[i] = el; }}
-            className="flex-1 relative h-full overflow-hidden border border-white/10"
+            className="flex-1 relative h-full overflow-hidden border border-white/5"
           >
             <div className="absolute top-0 left-[-100%] w-[600%] h-full">
               <Image 
-                src="https://picsum.photos/seed/645/1920/1080"
-                alt="645 Portrait Sliced"
+                src={portraitImg?.imageUrl || ''}
+                alt={portraitImg?.description || ''}
                 fill
-                className="object-cover grayscale group-hover:grayscale-0 transition-all duration-1000 scale-110 group-hover:scale-100"
+                className="object-cover grayscale group-hover:grayscale-0 transition-all duration-1000 scale-105 group-hover:scale-100"
                 style={{ left: `${-i * 16.66}%` }}
-                data-ai-hint="portrait design"
+                data-ai-hint={portraitImg?.imageHint}
               />
             </div>
-            <div className="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-30 transition-opacity duration-500" />
+            <div className="absolute inset-0 bg-primary/10 opacity-0 group-hover:opacity-20 transition-opacity duration-500" />
           </div>
         ))}
       </div>
       
       <div className="absolute inset-0 flex items-center justify-center pointer-events-none z-20">
-        <h3 className="text-[12vw] font-black text-white/10 text-outline tracking-[-0.05em] italic uppercase">645 PORTRAIT</h3>
+        <h3 className="text-[12vw] font-black text-white/5 text-outline tracking-[-0.05em] italic uppercase select-none">645 PORTRAIT</h3>
       </div>
     </div>
   );
@@ -83,16 +83,17 @@ export const GraphicDesign = () => {
   return (
     <section id="design" className="py-20 lg:py-40 bg-black">
       <div className="max-w-[1800px] mx-auto px-6 lg:px-10">
-        <div className="mb-20 flex flex-col lg:flex-row lg:items-end justify-between gap-10">
+        <div className="mb-20 flex flex-col lg:flex-row lg:items-start justify-between gap-10">
           <div>
-            <span className="text-primary font-bold tracking-[0.5em] text-[10px] uppercase mb-4 block">Creative Division</span>
-            <h2 className="text-[10vw] font-black leading-[0.8] tracking-tighter italic">
+            <h2 className="text-[10vw] font-black leading-[0.8] tracking-tighter italic uppercase">
               VISUAL <br /><span className="text-primary">CORE</span>
             </h2>
           </div>
-          <div className="max-w-md text-right">
+          <div className="max-w-xl text-right ml-auto">
              <p className="text-white/40 font-black tracking-widest text-[10px] mb-4 uppercase">Adobe Photoshop • Creative Direction</p>
-             <p className="text-white/60 text-lg leading-tight">Masterful image manipulation and artistic architecture crafted through decades of design evolution. Transforming raw concepts into digital masterpieces.</p>
+             <p className="text-white/60 text-lg md:text-xl leading-tight font-medium">
+               Masterful image manipulation and artistic architecture crafted through decades of design evolution. Transforming raw concepts into digital masterpieces.
+             </p>
           </div>
         </div>
 
