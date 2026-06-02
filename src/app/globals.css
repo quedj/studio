@@ -32,7 +32,7 @@
     @apply border-border;
   }
   body {
-    @apply bg-background text-foreground overflow-x-hidden;
+    @apply bg-black text-foreground overflow-x-hidden antialiased;
   }
   html {
     @apply scroll-smooth;
@@ -54,4 +54,9 @@
 
 .animate-float {
   animation: float 4s ease-in-out infinite;
+}
+
+/* Custom styles for better static feel */
+section {
+  @apply relative;
 }
