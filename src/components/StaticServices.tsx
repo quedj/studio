@@ -24,8 +24,8 @@ export const StaticServices = () => {
             </CardHeader>
             <CardContent className="p-10 pt-4">
               <p className="text-white/60 text-lg leading-relaxed">
-                We build high‑quality marketplace apps that connect people, goods, and services. 
-                From rental platforms to peer‑to‑peer marketplaces, we handle the entire development lifecycle.
+                We build high‑quality, scalable applications tailored to your business needs. 
+                From mobile solutions to complex web platforms, we handle the entire development lifecycle from concept to deployment.
               </p>
             </CardContent>
           </Card>
@@ -41,7 +41,7 @@ export const StaticServices = () => {
             <CardContent className="p-10 pt-4">
               <p className="text-white/60 text-lg leading-relaxed">
                 Professional DJ services for events, corporate functions, and private parties – 
-                bringing energy and entertainment to any occasion.
+                bringing energy and entertainment to any occasion with curated sonic experiences.
               </p>
             </CardContent>
           </Card>

@@ -19,7 +19,7 @@ export const StaticHero = () => {
           Digital Evolution – Specialized App Development
         </p>
         <p className="text-white/70 text-lg md:text-xl font-body max-w-2xl mx-auto mb-10 leading-relaxed">
-          We build high‑quality marketplace apps that connect people, goods, and services. 
+          We build high‑quality digital solutions that connect people, goods, and services across various industries. 
           As we transition our focus, we are doubling down on our tech innovation while honoring our history in professional entertainment.
         </p>
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
