@@ -1,4 +1,3 @@
-
 "use client";
 
 import React, { useEffect, useRef } from 'react';
@@ -7,8 +6,7 @@ import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { Navbar } from '@/components/Navbar';
 import { AIShowcase } from '@/components/AIShowcase';
-import { AITool } from '@/components/AITool';
-import { GraphicDesign } from '@/components/GraphicDesign';
+import { ImageGallery } from '@/components/ImageGallery';
 import { StaticServices } from '@/components/StaticServices';
 import { StaticFeaturedProject } from '@/components/StaticFeaturedProject';
 import { BookingPortal } from '@/components/BookingPortal';
@@ -66,11 +64,7 @@ export default function Home() {
         </div>
 
         <div className="scroll-reveal">
-          <AITool />
-        </div>
-        
-        <div className="scroll-reveal">
-          <GraphicDesign />
+          <ImageGallery />
         </div>
         
         <div className="scroll-reveal" id="services">
