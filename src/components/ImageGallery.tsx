@@ -38,6 +38,7 @@ export const ImageGallery = () => {
 
   const projects = [
     PlaceHolderImages.find(img => img.id === 'featured-design-piece'),
+    PlaceHolderImages.find(img => img.id === 'ami-consulting'),
     PlaceHolderImages.find(img => img.id === 'experimental-poster'),
     PlaceHolderImages.find(img => img.id === 'visual-architecture'),
   ].filter(Boolean);
@@ -69,7 +70,7 @@ export const ImageGallery = () => {
           </div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
           {projects.map((project: any, index: number) => (
             <div
               key={index}
@@ -82,11 +83,10 @@ export const ImageGallery = () => {
                 fill
                 className="object-cover transition-all duration-1000 group-hover:scale-105 grayscale group-hover:grayscale-0"
                 data-ai-hint={project.imageHint}
-                unoptimized={project.imageUrl.includes('drive.google.com')}
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700 flex flex-col justify-end p-10">
-                <span className="text-[10px] font-black uppercase tracking-[0.3em] text-primary mb-3">0{index + 1} // ARTWORK</span>
-                <h4 className="text-2xl font-bold uppercase italic tracking-tighter leading-tight text-white">
+              <div className="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700 flex flex-col justify-end p-8">
+                <span className="text-[10px] font-black uppercase tracking-[0.3em] text-primary mb-2">0{index + 1} // ARTWORK</span>
+                <h4 className="text-lg font-bold uppercase italic tracking-tighter leading-tight text-white">
                   {project.description}
                 </h4>
               </div>

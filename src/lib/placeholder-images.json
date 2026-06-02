@@ -3,25 +3,25 @@
     {
       "id": "featured-design-piece",
       "description": "QUE DESIGN PORTFOLIO FEATURE",
-      "imageUrl": "https://drive.google.com/uc?export=view&id=1N4X96Lq7m6L7Sgga7Se6dIDAAJEF8ss0",
+      "imageUrl": "/images/featured-design-piece.jpg",
       "imageHint": "graphic design"
     },
     {
       "id": "ami-consulting",
       "description": "AMI CONSULTING BRANDING",
-      "imageUrl": "https://picsum.photos/seed/ami/1200/1600",
+      "imageUrl": "/images/ami-consulting.jpg",
       "imageHint": "minimalist logo design"
     },
     {
       "id": "experimental-poster",
       "description": "EXPERIMENTAL TYPOGRAPHY POSTER",
-      "imageUrl": "https://picsum.photos/seed/typography/1200/1600",
+      "imageUrl": "/images/experimental-poster.jpg",
       "imageHint": "modern abstract typography"
     },
     {
       "id": "visual-architecture",
       "description": "VISUAL ARCHITECTURE STUDY",
-      "imageUrl": "https://picsum.photos/seed/architecture/1200/1600",
+      "imageUrl": "/images/visual-architecture.jpg",
       "imageHint": "architectural abstract design"
     }
   ]
