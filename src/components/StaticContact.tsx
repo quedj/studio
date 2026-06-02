@@ -11,11 +11,11 @@ export const StaticContact = () => {
         <div className="flex flex-col lg:flex-row gap-20">
           <div className="flex-1">
             <h2 className="text-[10vw] lg:text-[8vw] font-black leading-[0.85] tracking-tighter italic uppercase mb-12">
-              GET IN <br />
-              <span className="text-outline">TOUCH</span>
+              START A <br />
+              <span className="text-outline">PROJECT</span>
             </h2>
             <p className="text-white/60 text-xl md:text-2xl font-medium leading-tight max-w-xl">
-              Ready to elevate your digital presence or curate an unforgettable sonic experience? Contact me directly through the channels below.
+              Ready to elevate your digital presence or architect a new platform? Contact me directly to discuss your vision.
             </p>
           </div>
           

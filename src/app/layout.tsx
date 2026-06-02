@@ -3,8 +3,8 @@ import type {Metadata} from 'next';
 import './globals.css';
 
 export const metadata: Metadata = {
-  title: 'QUE Digital & Rhythm | Marketplace Development & DJ Services',
-  description: 'Expert Marketplace App Development and Professional DJ Services. Experience the rhythm of digital innovation.',
+  title: 'QUE Digital | Marketplace Development & Visual Design',
+  description: 'Expert Marketplace App Development and Visual Architecture. Engineering digital solutions with precision.',
 };
 
 export default function RootLayout({
