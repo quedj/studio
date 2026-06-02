@@ -36,14 +36,6 @@ export const ImageGallery = () => {
     });
   }, []);
 
-  // Filter projects to ensure we only show the design archive pieces
-  const projects = [
-    PlaceHolderImages.find(img => img.id === 'featured-design-piece'),
-    PlaceHolderImages.find(img => img.id === 'ami-consulting'),
-    PlaceHolderImages.find(img => img.id === 'experimental-poster'),
-    PlaceHolderImages.find(img => img.id === 'visual-architecture'),
-  ].filter(Boolean);
-
   return (
     <section id="gallery" ref={containerRef} className="py-40 px-6 lg:px-10 bg-black overflow-hidden">
       <div className="max-w-[1800px] mx-auto">
@@ -72,9 +64,9 @@ export const ImageGallery = () => {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
-          {projects.map((project: any, index: number) => (
+          {PlaceHolderImages.map((project, index) => (
             <div
-              key={index}
+              key={project.id}
               ref={el => { itemsRef.current[index] = el; }}
               className="group relative aspect-[3/4] overflow-hidden bg-secondary/10 border border-white/5"
             >
@@ -82,6 +74,7 @@ export const ImageGallery = () => {
                 src={project.imageUrl}
                 alt={project.description}
                 fill
+                unoptimized={project.imageUrl.includes('drive.google.com')}
                 className="object-cover transition-all duration-1000 group-hover:scale-105 grayscale group-hover:grayscale-0"
                 data-ai-hint={project.imageHint}
                 sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
