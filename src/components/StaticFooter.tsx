@@ -2,7 +2,6 @@
 "use client";
 
 import React from 'react';
-import Image from 'next/image';
 import { Facebook } from 'lucide-react';
 
 export const StaticFooter = () => {
@@ -11,19 +10,9 @@ export const StaticFooter = () => {
       <div className="max-w-[1800px] mx-auto">
         <div className="flex flex-col md:flex-row justify-between items-end gap-12">
           <div className="space-y-6">
-            <div className="flex items-center gap-4">
-              <div className="relative w-12 h-12">
-                <Image 
-                  src="/images/my-logo.png" 
-                  alt="QUE Digital Logo" 
-                  fill
-                  className="object-contain"
-                />
-              </div>
-              <h2 className="font-headline text-2xl font-black tracking-tighter uppercase italic">
-                QUE <span className="text-primary">DIGITAL</span>
-              </h2>
-            </div>
+            <h2 className="font-headline text-2xl font-black tracking-tighter uppercase italic">
+              QUE <span className="text-primary">DIGITAL</span>
+            </h2>
             <p className="text-white/20 text-[10px] font-black uppercase tracking-[0.4em]">Build. Scale. Evolve.</p>
             <div className="flex gap-4">
               <a 

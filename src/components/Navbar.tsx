@@ -2,7 +2,6 @@
 "use client";
 
 import React, { useState, useEffect } from 'react';
-import Image from 'next/image';
 import { cn } from '@/lib/utils';
 
 export const Navbar = () => {
@@ -33,15 +32,6 @@ export const Navbar = () => {
           className="flex items-center gap-4 group cursor-pointer"
           onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
         >
-          <div className="relative w-12 h-12 transition-all duration-500 group-hover:scale-110">
-            <Image 
-              src="/images/my-logo.png" 
-              alt="QUE Digital Logo" 
-              fill
-              className="object-contain"
-              priority
-            />
-          </div>
           <div className="font-headline font-black text-2xl tracking-tighter italic uppercase">
             QUE <span className="text-primary">Digital</span>
           </div>
