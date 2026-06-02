@@ -11,6 +11,7 @@ import { StaticContact } from '@/components/StaticContact';
 import { StaticFooter } from '@/components/StaticFooter';
 import { Toaster } from '@/components/ui/toaster';
 import { cn } from '@/lib/utils';
+import { SlicedPortrait } from '@/components/GraphicDesign';
 
 const ThreeCanvas = dynamic(() => import('@/components/ThreeCanvas').then(mod => mod.ThreeCanvas), { ssr: false });
 const ScrollExperience = dynamic(() => import('@/components/ScrollExperience').then(mod => mod.ScrollExperience), { ssr: false });
@@ -48,22 +49,32 @@ export default function Home() {
       <div className="relative z-10">
         <Navbar />
         
-        {/* Lando-Inspired Hero */}
-        <section id="home" className="h-screen flex items-center justify-center">
-          <div className="hero-gradient absolute inset-0 pointer-events-none" />
-          <TorchReveal text="QUE EXPERIENCE" />
+        {/* Immersive Hero with Sliced Imagery */}
+        <section id="home" className="pt-32 lg:pt-40">
+          <div className="max-w-[1800px] mx-auto px-6 lg:px-10 mb-10">
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-none border border-primary/30 bg-primary/5 mb-6">
+              <span className="text-[10px] font-bold uppercase tracking-widest text-primary">Founder & Lead Developer</span>
+            </div>
+            <h1 className="text-[15vw] font-black leading-[0.75] tracking-tighter italic mb-10">
+              I AM <br />
+              <span className="text-primary">QUE</span>
+            </h1>
+          </div>
           
-          <div className="relative z-30 text-center pointer-events-none px-10">
-             <div className="overflow-hidden mb-4">
-               <p className="text-white/40 font-black uppercase tracking-[0.8em] text-[10px] animate-in slide-in-from-bottom-full duration-1000">
-                 ENGINEERING THE EXTRAORDINARY
-               </p>
-             </div>
-             <div className="mt-[25vh] space-y-2">
-               <h2 className="text-[2vw] font-black italic tracking-widest text-white/20">AI ENGINEER</h2>
-               <h2 className="text-[2vw] font-black italic tracking-widest text-primary">GRAPHIC DESIGNER</h2>
-               <h2 className="text-[2vw] font-black italic tracking-widest text-white/20">ARCHITECT</h2>
-             </div>
+          {/* Featured Visual at the Top */}
+          <div className="px-4 lg:px-10">
+            <SlicedPortrait />
+          </div>
+
+          <div className="max-w-[1800px] mx-auto px-6 lg:px-10 mt-20 grid grid-cols-1 lg:grid-cols-2 gap-20">
+             <p className="text-white font-body text-xl lg:text-3xl uppercase tracking-[0.2em] font-bold leading-tight">
+               THE MIND BEHIND THE <span className="text-primary">RHYTHM</span> & DIGITAL EVOLUTION
+             </p>
+             <p className="text-white/60 text-lg lg:text-xl font-body leading-relaxed">
+               I build high‑quality digital solutions that bridge the gap between people and technology. 
+               As I transition my career focus from professional DJing to full‑time software development, 
+               I bring the same energy and precision to every line of code as I did to the stage.
+             </p>
           </div>
         </section>
 
@@ -71,9 +82,9 @@ export default function Home() {
         <GraphicDesign />
         <StaticServices />
         
-        {/* Transition Segment */}
+        {/* High-Impact Segment */}
         <div className="py-40 bg-white text-black text-center overflow-hidden">
-           <h2 className="text-[15vw] font-black leading-none tracking-tighter italic whitespace-nowrap opacity-10 translate-x-1/2">
+           <h2 className="text-[15vw] font-black leading-none tracking-tighter italic whitespace-nowrap opacity-10 -translate-x-1/2">
              BUILD • DESIGN • SCALE • BUILD • DESIGN • SCALE
            </h2>
         </div>

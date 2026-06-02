@@ -5,69 +5,98 @@ import Image from 'next/image';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
-export const GraphicDesign = () => {
+export const SlicedPortrait = () => {
   const containerRef = useRef(null);
   const slicesRef = useRef<HTMLDivElement[]>([]);
 
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
 
-    slicesRef.current.forEach((slice, i) => {
-      gsap.fromTo(slice, 
-        { y: 100 * (i + 1), opacity: 0 },
-        { 
-          y: 0, 
-          opacity: 1, 
-          scrollTrigger: {
-            trigger: containerRef.current,
-            start: "top 70%",
-            end: "bottom 20%",
-            scrub: 1
-          }
+    // Entrance animation for slices
+    gsap.fromTo(slicesRef.current, 
+      { 
+        y: (i) => (i % 2 === 0 ? 200 : -200), 
+        opacity: 0,
+        scale: 1.2,
+      },
+      { 
+        y: 0, 
+        opacity: 1,
+        scale: 1,
+        duration: 1.5,
+        stagger: 0.1,
+        ease: "power4.out",
+        scrollTrigger: {
+          trigger: containerRef.current,
+          start: "top 80%",
         }
-      );
+      }
+    );
+
+    // Parallax effect on scroll
+    slicesRef.current.forEach((slice, i) => {
+      gsap.to(slice, {
+        y: (i + 1) * 20,
+        ease: "none",
+        scrollTrigger: {
+          trigger: containerRef.current,
+          start: "top bottom",
+          end: "bottom top",
+          scrub: true
+        }
+      });
     });
   }, []);
 
   return (
-    <section id="design" ref={containerRef} className="py-40 bg-black">
-      <div className="max-w-[1800px] mx-auto px-10">
+    <div ref={containerRef} className="relative w-full aspect-[4/5] lg:aspect-[16/9] bg-black overflow-hidden group">
+      <div className="absolute inset-0 flex gap-1 lg:gap-2 p-2 lg:p-4">
+        {[0, 1, 2, 3, 4, 5].map((i) => (
+          <div 
+            key={i} 
+            ref={el => { if (el) slicesRef.current[i] = el; }}
+            className="flex-1 relative h-full overflow-hidden border border-white/10"
+          >
+            <div className="absolute top-0 left-[-100%] w-[600%] h-full">
+              <Image 
+                src="https://picsum.photos/seed/645/1920/1080"
+                alt="645 Portrait Sliced"
+                fill
+                className="object-cover grayscale group-hover:grayscale-0 transition-all duration-1000 scale-110 group-hover:scale-100"
+                style={{ left: `${-i * 16.66}%` }}
+                data-ai-hint="portrait design"
+              />
+            </div>
+            <div className="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-30 transition-opacity duration-500" />
+          </div>
+        ))}
+      </div>
+      
+      <div className="absolute inset-0 flex items-center justify-center pointer-events-none z-20">
+        <h3 className="text-[12vw] font-black text-white/10 text-outline tracking-[-0.05em] italic uppercase">645 PORTRAIT</h3>
+      </div>
+    </div>
+  );
+};
+
+export const GraphicDesign = () => {
+  return (
+    <section id="design" className="py-20 lg:py-40 bg-black">
+      <div className="max-w-[1800px] mx-auto px-6 lg:px-10">
         <div className="mb-20 flex flex-col lg:flex-row lg:items-end justify-between gap-10">
-          <h2 className="text-[10vw] font-black leading-[0.8] tracking-tighter italic">
-            VISUAL <br /><span className="text-primary">CORE</span>
-          </h2>
+          <div>
+            <span className="text-primary font-bold tracking-[0.5em] text-[10px] uppercase mb-4 block">Creative Division</span>
+            <h2 className="text-[10vw] font-black leading-[0.8] tracking-tighter italic">
+              VISUAL <br /><span className="text-primary">CORE</span>
+            </h2>
+          </div>
           <div className="max-w-md text-right">
              <p className="text-white/40 font-black tracking-widest text-[10px] mb-4 uppercase">Adobe Photoshop • Creative Direction</p>
-             <p className="text-white/60 text-lg leading-tight">Masterful image manipulation and artistic architecture crafted through decades of design evolution.</p>
+             <p className="text-white/60 text-lg leading-tight">Masterful image manipulation and artistic architecture crafted through decades of design evolution. Transforming raw concepts into digital masterpieces.</p>
           </div>
         </div>
 
-        <div className="relative w-full aspect-[4/5] lg:aspect-[16/9] bg-zinc-900 overflow-hidden flex items-center justify-center">
-          <div className="absolute inset-0 flex">
-            {[0, 1, 2, 3].map((i) => (
-              <div 
-                key={i} 
-                ref={el => { if (el) slicesRef.current[i] = el; }}
-                className="flex-1 relative h-full overflow-hidden border-r border-white/5"
-              >
-                <div className="absolute top-0 left-[-100%] w-[400%] h-full">
-                  <Image 
-                    src="https://picsum.photos/seed/645/1920/1080"
-                    alt="645 Portrait Sliced"
-                    fill
-                    className="object-cover grayscale hover:grayscale-0 transition-all duration-1000"
-                    style={{ left: `${-i * 25}%` }}
-                    data-ai-hint="portrait design"
-                  />
-                </div>
-              </div>
-            ))}
-          </div>
-          
-          <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-            <h3 className="text-[15vw] font-black text-white/5 text-outline tracking-[-0.1em] italic">645 PORTRAIT</h3>
-          </div>
-        </div>
+        <SlicedPortrait />
       </div>
     </section>
   );
