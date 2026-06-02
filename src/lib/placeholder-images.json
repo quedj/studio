@@ -19,27 +19,21 @@
       "imageHint": "mobile app"
     },
     {
-      "id": "event-crowd",
-      "description": "Energetic crowd at a music festival with red stage lights",
-      "imageUrl": "https://picsum.photos/seed/crowd101/1200/600",
-      "imageHint": "concert crowd"
-    },
-    {
       "id": "ami-consulting",
       "description": "AMI CONSULTING FIRM BRANDING",
-      "imageUrl": "https://picsum.photos/seed/amiconsult/1200/1600",
+      "imageUrl": "https://picsum.photos/seed/ami/1200/1600",
       "imageHint": "minimalist logo branding"
     },
     {
       "id": "experimental-poster",
       "description": "EXPERIMENTAL TYPOGRAPHY POSTER",
-      "imageUrl": "https://picsum.photos/seed/expposter/1200/1600",
+      "imageUrl": "https://picsum.photos/seed/typography/1200/1600",
       "imageHint": "modern abstract typography"
     },
     {
       "id": "visual-architecture",
       "description": "VISUAL ARCHITECTURE STUDY",
-      "imageUrl": "https://picsum.photos/seed/visarch/1200/1600",
+      "imageUrl": "https://picsum.photos/seed/architecture/1200/1600",
       "imageHint": "architectural abstract design"
     }
   ]

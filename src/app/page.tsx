@@ -7,15 +7,17 @@ import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { Navbar } from '@/components/Navbar';
 import { AIShowcase } from '@/components/AIShowcase';
+import { AITool } from '@/components/AITool';
 import { GraphicDesign } from '@/components/GraphicDesign';
 import { StaticServices } from '@/components/StaticServices';
 import { StaticFeaturedProject } from '@/components/StaticFeaturedProject';
-import { StaticContact } from '@/components/StaticContact';
+import { BookingPortal } from '@/components/BookingPortal';
 import { StaticFooter } from '@/components/StaticFooter';
 import { StaticHero } from '@/components/StaticHero';
 import { Toaster } from '@/components/ui/toaster';
 
 const CursorGlow = dynamic(() => import('@/components/CursorGlow').then(mod => mod.CursorGlow), { ssr: false });
+const ThreeCanvas = dynamic(() => import('@/components/ThreeCanvas').then(mod => mod.ThreeCanvas), { ssr: false });
 
 export default function Home() {
   const mainRef = useRef(null);
@@ -51,6 +53,7 @@ export default function Home() {
 
   return (
     <main ref={mainRef} className="min-h-screen bg-black text-white selection:bg-primary selection:text-white relative overflow-hidden">
+      <ThreeCanvas />
       <CursorGlow />
       
       <div className="relative z-10">
@@ -60,6 +63,10 @@ export default function Home() {
 
         <div className="scroll-reveal">
           <AIShowcase />
+        </div>
+
+        <div className="scroll-reveal">
+          <AITool />
         </div>
         
         <div className="scroll-reveal">
@@ -75,7 +82,7 @@ export default function Home() {
         </div>
 
         <div className="scroll-reveal">
-          <StaticContact />
+          <BookingPortal />
         </div>
 
         <StaticFooter />
