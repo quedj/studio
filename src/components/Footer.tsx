@@ -1,4 +1,3 @@
-
 import React from 'react';
 
 export const Footer = () => {
@@ -7,20 +6,20 @@ export const Footer = () => {
       <div className="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8">
         <div>
           <h2 className="font-headline text-2xl font-bold tracking-tighter">
-            QUE <span className="text-primary">DIGITAL & RHYTHM</span>
+            QUE <span className="text-primary">DIGITAL</span>
           </h2>
-          <p className="text-white/40 text-sm mt-2 font-body uppercase tracking-widest">Experience the Spectrum</p>
+          <p className="text-white/40 text-sm mt-2 font-body uppercase tracking-widest">Build. Scale. Evolve.</p>
         </div>
         
         <div className="flex gap-8 text-sm font-body text-white/60">
-          <a href="#" className="hover:text-primary transition-colors">Digital Division</a>
-          <a href="#" className="hover:text-primary transition-colors">Rhythm Division</a>
-          <a href="#" className="hover:text-primary transition-colors">Legal</a>
+          <a href="#services" className="hover:text-primary transition-colors">Expertise</a>
+          <a href="#gallery" className="hover:text-primary transition-colors">Archive</a>
+          <a href="#projects" className="hover:text-primary transition-colors">Projects</a>
         </div>
         
         <div className="text-right">
           <p className="text-xs text-white/30 font-body">
-            &copy; {new Date().getFullYear()} QUE DJ EXPERIENCE. ALL RIGHTS RESERVED.
+            &copy; {new Date().getFullYear()} QUE DIGITAL. ALL RIGHTS RESERVED.
           </p>
         </div>
       </div>

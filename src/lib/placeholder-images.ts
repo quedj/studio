@@ -1,4 +1,3 @@
-import data from './placeholder-images.json';
 
 export type ImagePlaceholder = {
   id: string;
@@ -7,4 +6,29 @@ export type ImagePlaceholder = {
   imageHint: string;
 };
 
-export const PlaceHolderImages: ImagePlaceholder[] = data.placeholderImages;
+export const PlaceHolderImages: ImagePlaceholder[] = [
+  {
+    id: "featured-design-piece",
+    description: "QUE DESIGN PORTFOLIO FEATURE",
+    imageUrl: "https://drive.google.com/uc?export=view&id=1N4X96Lq7m6L7Sgga7Se6dIDAAJEF8ss0",
+    imageHint: "graphic design"
+  },
+  {
+    id: "ami-consulting",
+    description: "AMI CONSULTING BRANDING",
+    imageUrl: "/images/ami.png",
+    imageHint: "minimalist logo"
+  },
+  {
+    id: "experimental-poster",
+    description: "EXPERIMENTAL TYPOGRAPHY POSTER",
+    imageUrl: "/images/experimental-poster.jpg",
+    imageHint: "modern typography"
+  },
+  {
+    id: "visual-architecture",
+    description: "VISUAL ARCHITECTURE STUDY",
+    imageUrl: "/images/visual-architecture.jpg",
+    imageHint: "architectural abstract"
+  }
+];
