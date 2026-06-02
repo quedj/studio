@@ -20,7 +20,7 @@ export const StaticServices = () => {
               <div className="w-16 h-16 rounded-full bg-primary/10 border border-primary/20 flex items-center justify-center mb-6 group-hover:bg-primary transition-colors duration-500">
                 <Rocket className="w-8 h-8 text-primary group-hover:text-white transition-colors duration-500" />
               </div>
-              <CardTitle className="font-headline text-3xl font-bold mb-4">Marketplace App Development</CardTitle>
+              <CardTitle className="font-headline text-3xl font-bold mb-4">App Development</CardTitle>
             </CardHeader>
             <CardContent className="p-10 pt-4">
               <p className="text-white/60 text-lg leading-relaxed">
