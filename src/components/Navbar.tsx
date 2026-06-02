@@ -39,6 +39,7 @@ export const Navbar = () => {
               alt="QUE Digital Logo" 
               fill
               className="object-contain"
+              priority
             />
           </div>
           <div className="font-headline font-black text-2xl tracking-tighter italic uppercase">

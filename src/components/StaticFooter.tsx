@@ -15,7 +15,7 @@ export const StaticFooter = () => {
               <div className="relative w-12 h-12">
                 <Image 
                   src="/images/my-logo.png" 
-                  alt="QUE Digital" 
+                  alt="QUE Digital Logo" 
                   fill
                   className="object-contain"
                 />
