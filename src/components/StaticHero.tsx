@@ -11,16 +11,16 @@ export const StaticHero = () => {
       <div className="absolute top-1/4 -left-20 w-96 h-96 bg-primary/20 rounded-full blur-[120px] animate-pulse" />
       <div className="absolute bottom-1/4 -right-20 w-96 h-96 bg-purple-600/10 rounded-full blur-[120px] animate-pulse" />
       
-      <div className="relative z-10 max-w-4xl px-6 text-center">
+      <div className="relative z-10 max-w-4xl px-6 text-center mt-12">
         <h1 className="font-headline text-6xl md:text-8xl font-black tracking-tighter mb-6 leading-none">
           QUE <span className="text-primary text-glow-primary">DJ EXPERIENCE</span>
         </h1>
         <p className="text-primary font-body text-xl md:text-2xl uppercase tracking-[0.3em] mb-8 font-bold">
-          Apps & Beats – Build. Rent. DJ.
+          Digital Evolution – Specialized App Development
         </p>
         <p className="text-white/70 text-lg md:text-xl font-body max-w-2xl mx-auto mb-10 leading-relaxed">
           We build high‑quality marketplace apps that connect people, goods, and services. 
-          Alongside our tech work, we provide professional DJ services that bring energy and entertainment to any occasion.
+          As we transition our focus, we are doubling down on our tech innovation while honoring our history in professional entertainment.
         </p>
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
           <Button 
