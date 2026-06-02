@@ -25,28 +25,28 @@
       "imageHint": "concert crowd"
     },
     {
-      "id": "portrait-design",
-      "description": "Detailed portrait image for graphic design showcase",
-      "imageUrl": "https://picsum.photos/seed/645/1920/1080",
-      "imageHint": "portrait design"
+      "id": "design-l6-poster",
+      "description": "GRAPHIC DESIGN POSTER",
+      "imageUrl": "https://picsum.photos/seed/l6poster/1200/1600",
+      "imageHint": "avant-garde portrait"
     },
     {
-      "id": "design-l6-poster",
-      "description": "Graphic design poster for L6 event featuring bold typography and abstract shapes",
-      "imageUrl": "https://picsum.photos/seed/l6poster/1200/1600",
-      "imageHint": "graphic poster"
+      "id": "portrait-design",
+      "description": "DETAILED PORTRAIT IMAGE",
+      "imageUrl": "https://picsum.photos/seed/tiger99/1200/1600",
+      "imageHint": "tiger face"
     },
     {
       "id": "design-abstract-1",
-      "description": "Abstract geometric graphic design piece with vibrant colors",
-      "imageUrl": "https://picsum.photos/seed/abstract1/1200/1600",
-      "imageHint": "abstract design"
+      "description": "ABSTRACT GEOMETRIC GRAPHIC",
+      "imageUrl": "https://picsum.photos/seed/architect/1200/1600",
+      "imageHint": "architectural tools"
     },
     {
       "id": "design-minimal-brand",
-      "description": "Minimalist branding and identity graphic design work",
-      "imageUrl": "https://picsum.photos/seed/minimalbrand/1200/1600",
-      "imageHint": "minimalist brand"
+      "description": "MINIMAL BRAND IDENTITY",
+      "imageUrl": "https://picsum.photos/seed/minimal/1200/1600",
+      "imageHint": "minimalist design"
     }
   ]
 }

@@ -18,7 +18,6 @@ const DESIGN_PROJECTS = [
   PlaceHolderImages.find(img => img.id === 'design-l6-poster'),
   PlaceHolderImages.find(img => img.id === 'portrait-design'),
   PlaceHolderImages.find(img => img.id === 'design-abstract-1'),
-  PlaceHolderImages.find(img => img.id === 'design-minimal-brand'),
 ].filter(Boolean);
 
 const SlicedProject = ({ image }: { image: any }) => {
@@ -52,7 +51,7 @@ const SlicedProject = ({ image }: { image: any }) => {
     // Subtle parallax effect on scroll
     slices.forEach((slice, i) => {
       gsap.to(slice, {
-        y: (i + 1) * 5,
+        y: (i + 1) * 3,
         ease: "none",
         scrollTrigger: {
           trigger: containerRef.current,
@@ -66,7 +65,7 @@ const SlicedProject = ({ image }: { image: any }) => {
 
   return (
     <div ref={containerRef} className="relative w-full aspect-[4/5] bg-black overflow-hidden group">
-      <div className="absolute inset-0 flex gap-0.5 p-1">
+      <div className="absolute inset-0 flex gap-[2px] p-0">
         {[0, 1, 2, 3, 4, 5, 6, 7].map((i) => (
           <div 
             key={i} 
@@ -83,7 +82,7 @@ const SlicedProject = ({ image }: { image: any }) => {
                 data-ai-hint={image?.imageHint}
               />
             </div>
-            <div className="absolute inset-0 bg-primary/10 opacity-0 group-hover:opacity-20 transition-opacity duration-500" />
+            <div className="absolute inset-0 bg-primary/5 opacity-0 group-hover:opacity-10 transition-opacity duration-500" />
           </div>
         ))}
       </div>
@@ -95,14 +94,15 @@ export const GraphicDesign = () => {
   return (
     <section id="design" className="py-20 lg:py-40 bg-black overflow-hidden">
       <div className="max-w-[1800px] mx-auto px-6 lg:px-10">
-        <div className="mb-20 flex flex-col lg:flex-row lg:items-end justify-between gap-10">
-          <div>
-            <h2 className="text-[10vw] font-black leading-[0.8] tracking-tighter italic uppercase">
-              VISUAL <br /><span className="text-primary">CORE</span>
+        <div className="mb-20 flex flex-col lg:flex-row lg:items-start justify-between gap-10">
+          <div className="relative">
+            <h2 className="text-[10vw] font-black leading-[0.8] tracking-tighter italic uppercase flex flex-col">
+              <span className="text-white">VISUAL</span>
+              <span className="text-primary">CORE</span>
             </h2>
           </div>
           <div className="max-w-xl text-right ml-auto">
-             <p className="text-white/40 font-black tracking-widest text-[10px] mb-4 uppercase">Portfolio • Adobe Photoshop • Creative Direction</p>
+             <p className="text-white/40 font-black tracking-widest text-[10px] mb-4 uppercase">PORTFOLIO • ADOBE PHOTOSHOP • CREATIVE DIRECTION</p>
              <p className="text-white/60 text-lg md:text-xl leading-tight font-medium">
                Transforming raw concepts into digital masterpieces through masterful image manipulation and artistic architecture. Every project is a journey in visual storytelling.
              </p>
@@ -121,15 +121,15 @@ export const GraphicDesign = () => {
               <CarouselItem key={index} className="pl-4 md:basis-1/2 lg:basis-1/3">
                 <div className="space-y-4">
                   <SlicedProject image={project} />
-                  <div className="flex justify-between items-center px-2">
-                    <span className="text-[10px] font-black uppercase tracking-widest text-white/40">Project 0{index + 1}</span>
-                    <h4 className="text-sm font-bold uppercase tracking-tighter italic">{project.description.split(' ').slice(0, 3).join(' ')}</h4>
+                  <div className="flex justify-between items-center px-0 mt-6">
+                    <span className="text-[10px] font-black uppercase tracking-widest text-white/40 italic">PROJECT 0{index + 1}</span>
+                    <h4 className="text-[10px] font-black uppercase tracking-widest text-white italic">{project.description}</h4>
                   </div>
                 </div>
               </CarouselItem>
             ))}
           </CarouselContent>
-          <div className="flex justify-end gap-2 mt-8 px-2">
+          <div className="flex justify-end gap-2 mt-12 px-2">
             <CarouselPrevious className="static translate-y-0 bg-white/5 border-white/10 hover:bg-primary hover:text-white rounded-none w-12 h-12" />
             <CarouselNext className="static translate-y-0 bg-white/5 border-white/10 hover:bg-primary hover:text-white rounded-none w-12 h-12" />
           </div>
