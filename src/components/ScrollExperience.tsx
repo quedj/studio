@@ -6,16 +6,17 @@ import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { MotionPathPlugin } from 'gsap/MotionPathPlugin';
 
-gsap.registerPlugin(ScrollTrigger, MotionPathPlugin);
-
 export const ScrollExperience = () => {
   const orbRef = useRef<HTMLDivElement>(null);
   const pathRef = useRef<SVGPathElement>(null);
 
   useEffect(() => {
-    if (!orbRef.current || !pathRef.current) return;
+    if (typeof window === 'undefined' || !orbRef.current || !pathRef.current) return;
 
-    gsap.to(orbRef.current, {
+    // Register plugins only on the client
+    gsap.registerPlugin(ScrollTrigger, MotionPathPlugin);
+
+    const anim = gsap.to(orbRef.current, {
       scrollTrigger: {
         trigger: "body",
         start: "top top",
@@ -33,6 +34,11 @@ export const ScrollExperience = () => {
       opacity: 1,
       ease: "none"
     });
+
+    return () => {
+      anim.kill();
+      ScrollTrigger.getAll().forEach(t => t.kill());
+    };
   }, []);
 
   return (

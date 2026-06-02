@@ -2,18 +2,21 @@
 "use client";
 
 import React, { useEffect, useState } from 'react';
+import dynamic from 'next/dynamic';
 import { Navbar } from '@/components/Navbar';
-import { TorchReveal } from '@/components/TorchReveal';
-import { ThreeCanvas } from '@/components/ThreeCanvas';
 import { AIShowcase } from '@/components/AIShowcase';
 import { GraphicDesign } from '@/components/GraphicDesign';
-import { ScrollExperience } from '@/components/ScrollExperience';
 import { StaticServices } from '@/components/StaticServices';
 import { StaticProjects } from '@/components/StaticProjects';
 import { StaticContact } from '@/components/StaticContact';
 import { StaticFooter } from '@/components/StaticFooter';
 import { Toaster } from '@/components/ui/toaster';
 import { cn } from '@/lib/utils';
+
+// Dynamically import heavy interactive components with SSR disabled to prevent module resolution errors
+const ThreeCanvas = dynamic(() => import('@/components/ThreeCanvas').then(mod => mod.ThreeCanvas), { ssr: false });
+const ScrollExperience = dynamic(() => import('@/components/ScrollExperience').then(mod => mod.ScrollExperience), { ssr: false });
+const TorchReveal = dynamic(() => import('@/components/TorchReveal').then(mod => mod.TorchReveal), { ssr: false });
 
 export default function Home() {
   const [isDisco, setIsDisco] = useState(false);
