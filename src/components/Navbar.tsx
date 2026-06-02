@@ -17,6 +17,7 @@ export const Navbar = () => {
   const navLinks = [
     { name: 'Home', href: '#home' },
     { name: 'Services', href: '#services' },
+    { name: 'Projects', href: '#projects' },
     { name: 'Why Us', href: '#why-us' },
     { name: 'Contact', href: '#contact' },
   ];
@@ -24,7 +25,7 @@ export const Navbar = () => {
   return (
     <nav className={cn(
       "fixed top-0 left-0 right-0 z-50 transition-all duration-300 px-6 py-4",
-      scrolled ? "bg-black/80 backdrop-blur-md border-b border-primary/20" : "bg-transparent"
+      scrolled ? "bg-black/90 backdrop-blur-md border-b border-primary/20" : "bg-transparent"
     )}>
       <div className="max-w-7xl mx-auto flex justify-between items-center">
         <div className="font-headline font-bold text-2xl tracking-tighter">
@@ -36,7 +37,7 @@ export const Navbar = () => {
             <a 
               key={link.name} 
               href={link.href}
-              className="text-sm font-medium hover:text-primary transition-colors uppercase tracking-widest"
+              className="text-xs font-bold hover:text-primary transition-colors uppercase tracking-[0.2em]"
             >
               {link.name}
             </a>

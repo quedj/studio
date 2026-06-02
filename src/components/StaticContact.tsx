@@ -64,12 +64,12 @@ export const StaticContact = () => {
             <CardContent>
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                  <Input placeholder="Full Name" className="bg-black/50 border-white/10 text-white p-6" required />
-                  <Input type="email" placeholder="Email Address" className="bg-black/50 border-white/10 text-white p-6" required />
+                  <Input placeholder="Full Name" className="bg-black/50 border-white/10 text-white p-6 rounded-none" required />
+                  <Input type="email" placeholder="Email Address" className="bg-black/50 border-white/10 text-white p-6 rounded-none" required />
                 </div>
-                <Input placeholder="Subject" className="bg-black/50 border-white/10 text-white p-6" required />
-                <Textarea placeholder="How can we help you?" className="bg-black/50 border-white/10 text-white min-h-[150px] p-6" required />
-                <Button type="submit" className="w-full bg-primary hover:bg-white hover:text-black py-8 text-lg font-bold uppercase tracking-widest transition-all duration-300">
+                <Input placeholder="Subject" className="bg-black/50 border-white/10 text-white p-6 rounded-none" required />
+                <Textarea placeholder="How can we help you?" className="bg-black/50 border-white/10 text-white min-h-[150px] p-6 rounded-none" required />
+                <Button type="submit" className="w-full bg-primary hover:bg-white hover:text-black py-8 text-lg font-bold uppercase tracking-widest transition-all duration-300 rounded-none">
                   Submit Request
                 </Button>
               </form>
