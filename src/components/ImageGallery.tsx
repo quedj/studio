@@ -41,47 +41,46 @@ export const ImageGallery = () => {
       <div className="max-w-[1800px] mx-auto">
         <div className="mb-24 flex flex-col md:flex-row md:items-end justify-between gap-8">
           <div>
-            <span className="text-primary font-bold tracking-[0.4em] uppercase text-[10px] mb-4 block italic">Portfolio</span>
+            <span className="text-primary font-bold tracking-[0.4em] uppercase text-[10px] mb-4 block italic">Design Core</span>
             <h2 className="text-[10vw] lg:text-[8vw] font-black uppercase tracking-tighter italic leading-[0.85]">
-              DESIGN <br />
+              VISUAL <br />
               <span className="text-outline">ARCHIVE</span>
             </h2>
           </div>
           <div className="max-w-md md:text-right space-y-6">
             <p className="text-white/40 text-sm font-medium leading-relaxed uppercase tracking-widest">
-              A curated collection of visual identities, architectural studies, and experimental typography. Explore my creative journey through my social archives.
+              Explore the full creative archive of visual identities, architectural studies, and experimental projects on my official social gallery.
             </p>
             <div className="flex justify-end">
               <Button 
                 asChild
-                className="bg-[#1877F2] hover:bg-white hover:text-[#1877F2] text-white border-none transition-all rounded-none uppercase text-[10px] font-black tracking-widest px-8"
+                className="bg-primary hover:bg-white hover:text-black text-white border-none transition-all rounded-none uppercase text-[10px] font-black tracking-widest px-8 h-14"
               >
                 <a href="https://www.facebook.com/thuthuthecreator/" target="_blank" rel="noopener noreferrer">
-                  View on Facebook <Facebook className="ml-2 w-3 h-3" />
+                  View Full Gallery <Facebook className="ml-2 w-4 h-4" />
                 </a>
               </Button>
             </div>
           </div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
-          {PlaceHolderImages.map((project, index) => (
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+          {PlaceHolderImages.slice(0, 3).map((project, index) => (
             <div
               key={project.id}
               ref={el => { itemsRef.current[index] = el; }}
-              className="group relative aspect-[3/4] overflow-hidden bg-secondary/10 border border-white/5"
+              className="group relative aspect-[4/5] overflow-hidden bg-secondary/10 border border-white/5"
             >
               <Image
                 src={project.imageUrl}
                 alt={project.description}
                 fill
-                unoptimized={project.imageUrl.includes('drive.google.com')}
                 className="object-cover transition-all duration-1000 group-hover:scale-105 grayscale group-hover:grayscale-0"
                 data-ai-hint={project.imageHint}
-                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700 flex flex-col justify-end p-8">
-                <span className="text-[10px] font-black uppercase tracking-[0.3em] text-primary mb-2">0{index + 1} // PROJECT</span>
+                <span className="text-[10px] font-black uppercase tracking-[0.3em] text-primary mb-2">0{index + 1} // ARCHIVE</span>
                 <h4 className="text-lg font-bold uppercase italic tracking-tighter leading-tight text-white">
                   {project.description}
                 </h4>

@@ -12,6 +12,7 @@ import { StaticFeaturedProject } from '@/components/StaticFeaturedProject';
 import { StaticContact } from '@/components/StaticContact';
 import { StaticFooter } from '@/components/StaticFooter';
 import { StaticHero } from '@/components/StaticHero';
+import { ImageGallery } from '@/components/ImageGallery';
 import { Toaster } from '@/components/ui/toaster';
 
 const CursorGlow = dynamic(() => import('@/components/CursorGlow').then(mod => mod.CursorGlow), { ssr: false });
@@ -63,6 +64,10 @@ export default function Home() {
         
         <div className="scroll-reveal" id="services">
           <StaticServices />
+        </div>
+
+        <div className="scroll-reveal">
+          <ImageGallery />
         </div>
 
         <div className="scroll-reveal">

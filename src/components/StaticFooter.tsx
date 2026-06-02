@@ -2,6 +2,7 @@
 "use client";
 
 import React from 'react';
+import { Facebook } from 'lucide-react';
 
 export const StaticFooter = () => {
   return (
@@ -20,6 +21,16 @@ export const StaticFooter = () => {
               </h2>
             </div>
             <p className="text-white/20 text-[10px] font-black uppercase tracking-[0.4em]">Build. Scale. Evolve.</p>
+            <div className="flex gap-4">
+              <a 
+                href="https://www.facebook.com/thuthuthecreator/" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="text-white/40 hover:text-primary transition-colors flex items-center gap-2 text-[10px] font-black uppercase tracking-widest"
+              >
+                <Facebook className="w-4 h-4" /> Gallery Archive
+              </a>
+            </div>
           </div>
 
           <div className="flex flex-col items-end gap-4">
